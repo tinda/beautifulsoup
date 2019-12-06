@@ -1,35 +1,35 @@
-.. BeautifulSoup文档 documentation master file, created by
+.. BeautifulSoup文檔 documentation master file, created by
    Deron Wang on Fri Nov 29 13:49:30 2013.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Beautiful Soup 4.4.0 文档
+Beautiful Soup 4.4.0 文檔
 ==========================
 
-`Beautiful Soup <http://www.crummy.com/software/BeautifulSoup/>`_ 是一个可以从HTML或XML文件中提取数据的Python库.它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.Beautiful Soup会帮你节省数小时甚至数天的工作时间.
+`Beautiful Soup <http://www.crummy.com/software/BeautifulSoup/>`_ 是一個可以從HTML或XML檔中提取資料的Python庫.它能夠通過你喜歡的轉換器實現慣用的文檔導航,查找,修改文檔的方式.Beautiful Soup會幫你節省數小時甚至數天的工作時間.
 
-这篇文档介绍了BeautifulSoup4中所有主要特性,并且有小例子.让我来向你展示它适合做什么,如何工作,怎样使用,如何达到你想要的效果,和处理异常情况.
+這篇文檔介紹了BeautifulSoup4中所有主要特性,並且有小例子.讓我來向你展示它適合做什麼,如何工作,怎樣使用,如何達到你想要的效果,和處理異常情況.
 
-文档中出现的例子在Python2.7和Python3.2中的执行结果相同
+文檔中出現的例子在Python2.7和Python3.2中的執行結果相同
 
-你可能在寻找 `Beautiful Soup3 <http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html>`_ 的文档,Beautiful Soup 3 目前已经停止开发,我们推荐在现在的项目中使用Beautiful Soup 4, `移植到BS4 <http://www.baidu.com>`_
+你可能在尋找 `Beautiful Soup3 <http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html>`_ 的文檔,Beautiful Soup 3 目前已經停止開發,我們推薦在現在的項目中使用Beautiful Soup 4, `移植到BS4 <http://www.baidu.com>`_
 
-这篇帮助文档已经被翻译成了其它语言:
+這篇幫助文檔已經被翻譯成了其它語言:
 
-* `这篇文档当然还有中文版. <http://www.crummy.com/software/BeautifulSoup/bs4/doc/index.cn.html>`_
+* `這篇文檔當然還有中文版. <http://www.crummy.com/software/BeautifulSoup/bs4/doc/index.cn.html>`_
 * このページは日本語で利用できます(`外部リンク <http://kondou.com/BS4/>`_)
 * 이 문서는 한국어 번역도 가능합니다. (`외부 링크 <http://coreapython.hosting.paran.com/etc/beautifulsoup4.html>`_)
 
 
-寻求帮助
+尋求幫助
 --------
 
-如果你有关于BeautifulSoup的问题,可以发送邮件到 `讨论组 <https://groups.google.com/forum/?fromgroups#!forum/beautifulsoup>`_ .如果你的问题包含了一段需要转换的HTML代码,那么确保你提的问题描述中附带这段HTML文档的 `代码诊断`_ [1]_
+如果你有關於BeautifulSoup的問題,可以發送郵件到 `討論群組 <https://groups.google.com/forum/?fromgroups#!forum/beautifulsoup>`_ .如果你的問題包含了一段需要轉換的HTML代碼,那麼確保你提的問題描述中附帶這段HTML文檔的 `代碼診斷`_ [1]_
 
-快速开始
+快速開始
 ========
 
-下面的一段HTML代码将作为例子被多次用到.这是 *爱丽丝梦游仙境的* 的一段内容(以后内容中简称为 *爱丽丝* 的文档):
+下面的一段HTML代碼將作為例子被多次用到.這是 *愛麗絲夢遊仙境的* 的一段內容(以後內容中簡稱為 *愛麗絲* 的文檔):
 
 ::
 
@@ -47,7 +47,7 @@ Beautiful Soup 4.4.0 文档
     <p class="story">...</p>
     """
 
-使用BeautifulSoup解析这段代码,能够得到一个 ``BeautifulSoup`` 的对象,并能按照标准的缩进格式的结构输出:
+使用BeautifulSoup解析這段代碼,能夠得到一個 ``BeautifulSoup`` 的物件,並能按照標準的縮進格式的結構輸出:
 
 ::
 
@@ -88,7 +88,7 @@ Beautiful Soup 4.4.0 文档
     #  </body>
     # </html>
 
-几个简单的浏览结构化数据的方法:
+幾個簡單的流覽結構化資料的方法:
 
 ::
 
@@ -121,7 +121,7 @@ Beautiful Soup 4.4.0 文档
     soup.find(id="link3")
     # <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>
 
-从文档中找到所有<a>标签的链接:
+從文檔中找到所有<a>標籤的連結:
 
 ::
 
@@ -131,7 +131,7 @@ Beautiful Soup 4.4.0 文档
         # http://example.com/lacie
         # http://example.com/tillie
 
-从文档中获取所有文字内容:
+從文檔中獲取所有文字內容:
 
 ::
 
@@ -148,55 +148,55 @@ Beautiful Soup 4.4.0 文档
     #
     # ...
 
-这是你想要的吗?别着急,还有更好用的
+這是你想要的嗎?別著急,還有更好用的
 
-安装 Beautiful Soup
+安裝 Beautiful Soup
 ======================
 
-如果你用的是新版的Debain或ubuntu,那么可以通过系统的软件包管理来安装:
+如果你用的是新版的Debain或ubuntu,那麼可以通過系統的套裝軟體管理來安裝:
 
 ``$ apt-get install Python-bs4``
 
-Beautiful Soup 4 通过PyPi发布,所以如果你无法使用系统包管理安装,那么也可以通过 ``easy_install`` 或 ``pip`` 来安装.包的名字是 ``beautifulsoup4`` ,这个包兼容Python2和Python3.
+Beautiful Soup 4 通過PyPi發佈,所以如果你無法使用系統包管理安裝,那麼也可以通過 ``easy_install`` 或 ``pip`` 來安裝.包的名字是 ``beautifulsoup4`` ,這個包相容Python2和Python3.
 
 ``$ easy_install beautifulsoup4``
 
 ``$ pip install beautifulsoup4``
 
-(在PyPi中还有一个名字是 ``BeautifulSoup`` 的包,但那可能不是你想要的,那是 `Beautiful Soup3 <http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html>`_ 的发布版本,因为很多项目还在使用BS3, 所以 ``BeautifulSoup`` 包依然有效.但是如果你在编写新项目,那么你应该安装的 ``beautifulsoup4`` )
+(在PyPi中還有一個名字是 ``BeautifulSoup`` 的包,但那可能不是你想要的,那是 `Beautiful Soup3 <http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html>`_ 的發佈版本,因為很多專案還在使用BS3, 所以 ``BeautifulSoup`` 包依然有效.但是如果你在編寫新項目,那麼你應該安裝的 ``beautifulsoup4`` )
 
-如果你没有安装 ``easy_install`` 或 ``pip`` ,那你也可以 `下载BS4的源码 <http://www.crummy.com/software/BeautifulSoup/download/4.x/>`_ ,然后通过setup.py来安装.
+如果你沒有安裝 ``easy_install`` 或 ``pip`` ,那你也可以 `下載BS4的源碼 <http://www.crummy.com/software/BeautifulSoup/download/4.x/>`_ ,然後通過setup.py來安裝.
 
 ``$ Python setup.py install``
 
-如果上述安装方法都行不通,Beautiful Soup的发布协议允许你将BS4的代码打包在你的项目中,这样无须安装即可使用.
+如果上述安裝方法都行不通,Beautiful Soup的發佈協議允許你將BS4的代碼打包在你的項目中,這樣無須安裝即可使用.
 
-作者在Python2.7和Python3.2的版本下开发Beautiful Soup, 理论上Beautiful Soup应该在所有当前的Python版本中正常工作
+作者在Python2.7和Python3.2的版本下開發Beautiful Soup, 理論上Beautiful Soup應該在所有當前的Python版本中正常工作
 
-安装完成后的问题
+安裝完成後的問題
 -----------------
 
-Beautiful Soup发布时打包成Python2版本的代码,在Python3环境下安装时,会自动转换成Python3的代码,如果没有一个安装的过程,那么代码就不会被转换.
+Beautiful Soup發佈時打包成Python2版本的代碼,在Python3環境下安裝時,會自動轉換成Python3的代碼,如果沒有一個安裝的過程,那麼代碼就不會被轉換.
 
-如果代码抛出了 ``ImportError`` 的异常: "No module named HTMLParser", 这是因为你在Python3版本中执行Python2版本的代码.
+如果代碼拋出了 ``ImportError`` 的異常: "No module named HTMLParser", 這是因為你在Python3版本中執行Python2版本的代碼.
 
 
-如果代码抛出了 ``ImportError`` 的异常: "No module named html.parser", 这是因为你在Python2版本中执行Python3版本的代码.
+如果代碼拋出了 ``ImportError`` 的異常: "No module named html.parser", 這是因為你在Python2版本中執行Python3版本的代碼.
 
-如果遇到上述2种情况,最好的解决方法是重新安装BeautifulSoup4.
+如果遇到上述2種情況,最好的解決方法是重新安裝BeautifulSoup4.
 
-如果在ROOT_TAG_NAME = u'[document]'代码处遇到 ``SyntaxError`` "Invalid syntax"错误,需要将把BS4的Python代码版本从Python2转换到Python3. 可以重新安装BS4:
+如果在ROOT_TAG_NAME = u'[document]'代碼處遇到 ``SyntaxError`` "Invalid syntax"錯誤,需要將把BS4的Python代碼版本從Python2轉換到Python3. 可以重新安裝BS4:
 
 ``$ Python3 setup.py install``
 
-或在bs4的目录中执行Python代码版本转换脚本
+或在bs4的目錄中執行Python代碼版本轉換腳本
 
 ``$ 2to3-3.2 -w bs4``
 
-安装解析器
+安裝解析器
 ------------
 
-Beautiful Soup支持Python标准库中的HTML解析器,还支持一些第三方的解析器,其中一个是 `lxml <http://lxml.de/>`_ .根据操作系统不同,可以选择下列方法来安装lxml:
+Beautiful Soup支持Python標準庫中的HTML解析器,還支持一些協力廠商的解析器,其中一個是 `lxml <http://lxml.de/>`_ .根據作業系統不同,可以選擇下列方法來安裝lxml:
 
 ``$ apt-get install Python-lxml``
 
@@ -204,7 +204,7 @@ Beautiful Soup支持Python标准库中的HTML解析器,还支持一些第三方�
 
 ``$ pip install lxml``
 
-另一个可供选择的解析器是纯Python实现的 `html5lib <http://code.google.com/p/html5lib/>`_ , html5lib的解析方式与浏览器相同,可以选择下列方法来安装html5lib:
+另一個可供選擇的解析器是純Python實現的 `html5lib <http://code.google.com/p/html5lib/>`_ , html5lib的解析方式與流覽器相同,可以選擇下列方法來安裝html5lib:
 
 ``$ apt-get install Python-html5lib``
 
@@ -212,39 +212,39 @@ Beautiful Soup支持Python标准库中的HTML解析器,还支持一些第三方�
 
 ``$ pip install html5lib``
 
-下表列出了主要的解析器,以及它们的优缺点:
+下表列出了主要的解析器,以及它們的優缺點:
 
 +-----------------------+---------------------------+---------------------------+---------------------------+
-|         解析器        |         使用方法          |            优势           |            劣势           |
+|         解析器        |         使用方法          |            優勢           |            劣勢           |
 +=======================+===========================+===========================+===========================+
-| Python标准库          | ``BeautifulSoup(markup,   | - Python的内置标准库      | - Python 2.7.3 or 3.2.2)前|
-|                       | "html.parser")``          | - 执行速度适中            |   的版本中文档容错能力差  |
-|                       |                           | - 文档容错能力强          |                           |
+| Python標準庫          | ``BeautifulSoup(markup,   | - Python的內置標準庫      | - Python 2.7.3 or 3.2.2)前|
+|                       | "html.parser")``          | - 執行速度適中            |   的版本中文檔容錯能力差  |
+|                       |                           | - 文檔容錯能力強          |                           |
 |                       |                           |                           |                           |
 +-----------------------+---------------------------+---------------------------+---------------------------+
-| lxml HTML 解析器      | ``BeautifulSoup(markup,   | - 速度快                  | - 需要安装C语言库         |
-|                       | "lxml")``                 | - 文档容错能力强          |                           |
+| lxml HTML 解析器      | ``BeautifulSoup(markup,   | - 速度快                  | - 需要安裝C語言庫         |
+|                       | "lxml")``                 | - 文檔容錯能力強          |                           |
 |                       |                           |                           |                           |
 +-----------------------+---------------------------+---------------------------+---------------------------+
-| lxml XML 解析器       | ``BeautifulSoup(markup,   | - 速度快                  | - 需要安装C语言库         |
+| lxml XML 解析器       | ``BeautifulSoup(markup,   | - 速度快                  | - 需要安裝C語言庫         |
 |                       | ["lxml-xml"])``           | - 唯一支持XML的解析器     |                           |
 |                       |                           |                           |                           |
 |                       | ``BeautifulSoup(markup,   |                           |                           |
 |                       | "xml")``                  |                           |                           |
 +-----------------------+---------------------------+---------------------------+---------------------------+
-| html5lib              | ``BeautifulSoup(markup,   | - 最好的容错性            | - 速度慢                  |
-|                       | "html5lib")``             | - 以浏览器的方式解析文档  | - 不依赖外部扩展          |
-|                       |                           | - 生成HTML5格式的文档     |                           |
+| html5lib              | ``BeautifulSoup(markup,   | - 最好的容錯性            | - 速度慢                  |
+|                       | "html5lib")``             | - 以流覽器的方式解析文檔  | - 不依賴外部擴展          |
+|                       |                           | - 生成HTML5格式的文檔     |                           |
 +-----------------------+---------------------------+---------------------------+---------------------------+
 
-推荐使用lxml作为解析器,因为效率更高. 在Python2.7.3之前的版本和Python3中3.2.2之前的版本,必须安装lxml或html5lib, 因为那些Python版本的标准库中内置的HTML解析方法不够稳定.
+推薦使用lxml作為解析器,因為效率更高. 在Python2.7.3之前的版本和Python3中3.2.2之前的版本,必須安裝lxml或html5lib, 因為那些Python版本的標準庫中內置的HTML解析方法不夠穩定.
 
-提示: 如果一段HTML或XML文档格式不正确的话,那么在不同的解析器中返回的结果可能是不一样的,查看 `解析器之间的区别`_  了解更多细节
+提示: 如果一段HTML或XML文檔格式不正確的話,那麼在不同的解析器中返回的結果可能是不一樣的,查看 `解析器之間的區別`_  瞭解更多細節
 
 如何使用
 ========
 
-将一段文档传入BeautifulSoup 的构造方法,就能得到一个文档的对象, 可以传入一段字符串或一个文件句柄.
+將一段文檔傳入BeautifulSoup 的構造方法,就能得到一個文檔的物件, 可以傳入一段字串或一個檔案控制代碼.
 
 ::
 
@@ -254,25 +254,25 @@ Beautiful Soup支持Python标准库中的HTML解析器,还支持一些第三方�
 
     soup = BeautifulSoup("<html>data</html>")
 
-首先,文档被转换成Unicode,并且HTML的实例都被转换成Unicode编码
+首先,文檔被轉換成Unicode,並且HTML的實例都被轉換成Unicode編碼
 
 ::
 
     BeautifulSoup("Sacr&eacute; bleu!")
     <html><head></head><body>Sacré bleu!</body></html>
 
-然后,Beautiful Soup选择最合适的解析器来解析这段文档,如果手动指定解析器那么Beautiful Soup会选择指定的解析器来解析文档.(参考 `解析成XML`_ ).
+然後,Beautiful Soup選擇最合適的解析器來解析這段文檔,如果手動指定解析器那麼Beautiful Soup會選擇指定的解析器來解析文檔.(參考 `解析成XML`_ ).
 
-对象的种类
+對象的種類
 ==========
 
-Beautiful Soup将复杂HTML文档转换成一个复杂的树形结构,每个节点都是Python对象,所有对象可以归纳为4种:
+Beautiful Soup將複雜HTML文檔轉換成一個複雜的樹形結構,每個節點都是Python物件,所有物件可以歸納為4種:
 ``Tag`` , ``NavigableString`` , ``BeautifulSoup`` , ``Comment`` .
 
 Tag
 -----
 
-``Tag`` 对象与XML或HTML原生文档中的tag相同:
+``Tag`` 物件與XML或HTML原生文檔中的tag相同:
 
 ::
 
@@ -281,19 +281,19 @@ Tag
     type(tag)
     # <class 'bs4.element.Tag'>
 
-Tag有很多方法和属性,在 `遍历文档树`_ 和 `搜索文档树`_ 中有详细解释.现在介绍一下tag中最重要的属性: name和attributes
+Tag有很多方法和屬性,在 `遍歷文檔樹`_ 和 `搜索文檔樹`_ 中有詳細解釋.現在介紹一下tag中最重要的屬性: name和attributes
 
 Name
 .....
 
-每个tag都有自己的名字,通过 ``.name`` 来获取:
+每個tag都有自己的名字,通過 ``.name`` 來獲取:
 
 ::
 
     tag.name
     # u'b'
 
-如果改变了tag的name,那将影响所有通过当前Beautiful Soup对象生成的HTML文档:
+如果改變了tag的name,那將影響所有通過當前Beautiful Soup物件生成的HTML文檔:
 
 ::
 
@@ -304,21 +304,21 @@ Name
 Attributes
 ............
 
-一个tag可能有很多个属性. tag ``<b class="boldest">`` 有一个 "class" 的属性,值为 "boldest" . tag的属性的操作方法与字典相同:
+一個tag可能有很多個屬性. tag ``<b class="boldest">`` 有一個 "class" 的屬性,值為 "boldest" . tag的屬性的操作方法與字典相同:
 
 ::
 
     tag['class']
     # u'boldest'
 
-也可以直接"点"取属性, 比如: ``.attrs`` :
+也可以直接"點"取屬性, 比如: ``.attrs`` :
 
 ::
 
     tag.attrs
     # {u'class': u'boldest'}
 
-tag的属性可以被添加,删除或修改. 再说一次, tag的属性操作方法与字典一样
+tag的屬性可以被添加,刪除或修改. 再說一次, tag的屬性操作方法與字典一樣
 
 ::
 
@@ -337,10 +337,10 @@ tag的属性可以被添加,删除或修改. 再说一次, tag的属性操作方
     print(tag.get('class'))
     # None
 
-多值属性
+多值屬性
 ``````````
 
-HTML 4定义了一系列可以包含多个值的属性.在HTML5中移除了一些,却增加更多.最常见的多值的属性是 class (一个tag可以有多个CSS的class). 还有一些属性 ``rel`` , ``rev`` , ``accept-charset`` , ``headers`` , ``accesskey`` . 在Beautiful Soup中多值属性的返回类型是list:
+HTML 4定義了一系列可以包含多個值的屬性.在HTML5中移除了一些,卻增加更多.最常見的多值的屬性是 class (一個tag可以有多個CSS的class). 還有一些屬性 ``rel`` , ``rev`` , ``accept-charset`` , ``headers`` , ``accesskey`` . 在Beautiful Soup中多值屬性的返回類型是list:
 
 ::
 
@@ -352,7 +352,7 @@ HTML 4定义了一系列可以包含多个值的属性.在HTML5中移除了一�
     css_soup.p['class']
     # ["body"]
 
-如果某个属性看起来好像有多个值,但在任何版本的HTML定义中都没有被定义为多值属性,那么Beautiful Soup会将这个属性作为字符串返回
+如果某個屬性看起來好像有多個值,但在任何版本的HTML定義中都沒有被定義為多值屬性,那麼Beautiful Soup會將這個屬性作為字串返回
 
 ::
 
@@ -360,7 +360,7 @@ HTML 4定义了一系列可以包含多个值的属性.在HTML5中移除了一�
     id_soup.p['id']
     # 'my id'
 
-将tag转换成字符串时,多值属性会合并为一个值
+將tag轉換成字串時,多值屬性會合並為一個值
 
 ::
 
@@ -371,7 +371,7 @@ HTML 4定义了一系列可以包含多个值的属性.在HTML5中移除了一�
     print(rel_soup.p)
     # <p>Back to the <a rel="index contents">homepage</a></p>
 
-如果转换的文档是XML格式,那么tag中不包含多值属性
+如果轉換的文檔是XML格式,那麼tag中不包含多值屬性
 
 ::
 
@@ -379,10 +379,10 @@ HTML 4定义了一系列可以包含多个值的属性.在HTML5中移除了一�
     xml_soup.p['class']
     # u'body strikeout'
 
-可以遍历的字符串
+可以遍歷的字串
 ----------------
 
-字符串常被包含在tag内.Beautiful Soup用 ``NavigableString`` 类来包装tag中的字符串:
+字串常被包含在tag內.Beautiful Soup用 ``NavigableString`` 類來包裝tag中的字串:
 
 ::
 
@@ -391,7 +391,7 @@ HTML 4定义了一系列可以包含多个值的属性.在HTML5中移除了一�
     type(tag.string)
     # <class 'bs4.element.NavigableString'>
 
-一个 ``NavigableString`` 字符串与Python中的Unicode字符串相同,并且还支持包含在 `遍历文档树`_ 和 `搜索文档树`_ 中的一些特性. 通过 ``unicode()`` 方法可以直接将 ``NavigableString`` 对象转换成Unicode字符串:
+一個 ``NavigableString`` 字串與Python中的Unicode字串相同,並且還支援包含在 `遍歷文檔樹`_ 和 `搜索文檔樹`_ 中的一些特性. 通過 ``unicode()`` 方法可以直接將 ``NavigableString`` 物件轉換成Unicode字串:
 
 ::
 
@@ -401,7 +401,7 @@ HTML 4定义了一系列可以包含多个值的属性.在HTML5中移除了一�
     type(unicode_string)
     # <type 'unicode'>
 
-tag中包含的字符串不能编辑,但是可以被替换成其它的字符串,用 `replace_with()`_ 方法:
+tag中包含的字串不能編輯,但是可以被替換成其它的字串,用 `replace_with()`_ 方法:
 
 ::
 
@@ -409,26 +409,26 @@ tag中包含的字符串不能编辑,但是可以被替换成其它的字符串,
     tag
     # <blockquote>No longer bold</blockquote>
 
-``NavigableString`` 对象支持 `遍历文档树`_ 和 `搜索文档树`_ 中定义的大部分属性, 并非全部.尤其是,一个字符串不能包含其它内容(tag能够包含字符串或是其它tag),字符串不支持 ``.contents`` 或 ``.string`` 属性或 ``find()`` 方法.
+``NavigableString`` 物件支援 `遍歷文檔樹`_ 和 `搜索文檔樹`_ 中定義的大部分屬性, 並非全部.尤其是,一個字串不能包含其它內容(tag能夠包含字串或是其它tag),字串不支援 ``.contents`` 或 ``.string`` 屬性或 ``find()`` 方法.
 
-如果想在Beautiful Soup之外使用 ``NavigableString`` 对象,需要调用 ``unicode()`` 方法,将该对象转换成普通的Unicode字符串,否则就算Beautiful Soup已方法已经执行结束,该对象的输出也会带有对象的引用地址.这样会浪费内存.
+如果想在Beautiful Soup之外使用 ``NavigableString`` 物件,需要調用 ``unicode()`` 方法,將該物件轉換成普通的Unicode字串,否則就算Beautiful Soup已方法已經執行結束,該物件的輸出也會帶有物件的引用位址.這樣會浪費記憶體.
 
 BeautifulSoup
 ----------------
 
-``BeautifulSoup`` 对象表示的是一个文档的全部内容.大部分时候,可以把它当作 ``Tag`` 对象,它支持 `遍历文档树`_ 和 `搜索文档树`_ 中描述的大部分的方法.
+``BeautifulSoup`` 物件表示的是一個文檔的全部內容.大部分時候,可以把它當作 ``Tag`` 物件,它支援 `遍歷文檔樹`_ 和 `搜索文檔樹`_ 中描述的大部分的方法.
 
-因为 ``BeautifulSoup`` 对象并不是真正的HTML或XML的tag,所以它没有name和attribute属性.但有时查看它的 ``.name`` 属性是很方便的,所以 ``BeautifulSoup`` 对象包含了一个值为 "[document]" 的特殊属性 ``.name``
+因為 ``BeautifulSoup`` 物件並不是真正的HTML或XML的tag,所以它沒有name和attribute屬性.但有時查看它的 ``.name`` 屬性是很方便的,所以 ``BeautifulSoup`` 物件包含了一個值為 "[document]" 的特殊屬性 ``.name``
 
 ::
 
     soup.name
     # u'[document]'
 
-注释及特殊字符串
+注釋及特殊字串
 -----------------
 
-``Tag`` , ``NavigableString`` , ``BeautifulSoup`` 几乎覆盖了html和xml中的所有内容,但是还有一些特殊对象.容易让人担心的内容是文档的注释部分:
+``Tag`` , ``NavigableString`` , ``BeautifulSoup`` 幾乎覆蓋了html和xml中的所有內容,但是還有一些特殊物件.容易讓人擔心的內容是文檔的注釋部分:
 
 ::
 
@@ -438,14 +438,14 @@ BeautifulSoup
     type(comment)
     # <class 'bs4.element.Comment'>
 
-``Comment`` 对象是一个特殊类型的 ``NavigableString`` 对象:
+``Comment`` 物件是一個特殊類型的 ``NavigableString`` 物件:
 
 ::
 
     comment
     # u'Hey, buddy. Want to buy a used parser'
 
-但是当它出现在HTML文档中时, ``Comment`` 对象会使用特殊的格式输出:
+但是當它出現在HTML文檔中時, ``Comment`` 物件會使用特殊的格式輸出:
 
 ::
 
@@ -454,7 +454,7 @@ BeautifulSoup
     #  <!--Hey, buddy. Want to buy a used parser?-->
     # </b>
 
-Beautiful Soup中定义的其它类型都可能会出现在XML的文档中: ``CData`` , ``ProcessingInstruction`` , ``Declaration`` , ``Doctype`` .与 ``Comment`` 对象类似,这些类都是 ``NavigableString`` 的子类,只是添加了一些额外的方法的字符串独享.下面是用CDATA来替代注释的例子:
+Beautiful Soup中定義的其它類型都可能會出現在XML的文檔中: ``CData`` , ``ProcessingInstruction`` , ``Declaration`` , ``Doctype`` .與 ``Comment`` 物件類似,這些類都是 ``NavigableString`` 的子類,只是添加了一些額外的方法的字串獨享.下面是用CDATA來替代注釋的例子:
 
 ::
 
@@ -467,10 +467,10 @@ Beautiful Soup中定义的其它类型都可能会出现在XML的文档中: ``CD
     #  <![CDATA[A CDATA block]]>
     # </b>
 
-遍历文档树
+遍歷文檔樹
 ==========
 
-还拿"爱丽丝梦游仙境"的文档来做例子:
+還拿"愛麗絲夢遊仙境"的文檔來做例子:
 
 ::
 
@@ -491,19 +491,19 @@ Beautiful Soup中定义的其它类型都可能会出现在XML的文档中: ``CD
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html_doc, 'html.parser')
 
-通过这段例子来演示怎样从文档的一段内容找到另一段内容
+通過這段例子來演示怎樣從文檔的一段內容找到另一段內容
 
-子节点
+子節點
 -------
 
-一个Tag可能包含多个字符串或其它的Tag,这些都是这个Tag的子节点.Beautiful Soup提供了许多操作和遍历子节点的属性.
+一個Tag可能包含多個字串或其它的Tag,這些都是這個Tag的子節點.Beautiful Soup提供了許多操作和遍歷子節點的屬性.
 
-注意: Beautiful Soup中字符串节点不支持这些属性,因为字符串没有子节点
+注意: Beautiful Soup中字串節點不支援這些屬性,因為字串沒有子節點
 
 tag的名字
 ..........
 
-操作文档树最简单的方法就是告诉它你想获取的tag的name.如果想获取 <head> 标签,只要用 ``soup.head`` :
+操作文檔樹最簡單的方法就是告訴它你想獲取的tag的name.如果想獲取 <head> 標籤,只要用 ``soup.head`` :
 
 ::
 
@@ -513,21 +513,21 @@ tag的名字
     soup.title
     # <title>The Dormouse's story</title>
 
-这是个获取tag的小窍门,可以在文档树的tag中多次调用这个方法.下面的代码可以获取<body>标签中的第一个<b>标签:
+這是個獲取tag的小竅門,可以在文檔樹的tag中多次調用這個方法.下面的代碼可以獲取<body>標籤中的第一個<b>標籤:
 
 ::
 
     soup.body.b
     # <b>The Dormouse's story</b>
 
-通过点取属性的方式只能获得当前名字的第一个tag:
+通過點取屬性的方式只能獲得當前名字的第一個tag:
 
 ::
 
     soup.a
     # <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
 
-如果想要得到所有的<a>标签,或是通过名字得到比一个tag更多的内容的时候,就需要用到 `Searching the tree` 中描述的方法,比如: find_all()
+如果想要得到所有的<a>標籤,或是通過名字得到比一個tag更多的內容的時候,就需要用到 `Searching the tree` 中描述的方法,比如: find_all()
 
 ::
 
@@ -539,7 +539,7 @@ tag的名字
 .contents 和 .children
 ........................
 
-tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
+tag的 ``.contents`` 屬性可以將tag的子節點以清單的方式輸出:
 
 ::
 
@@ -556,7 +556,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     title_tag.contents
     # [u'The Dormouse's story']
 
-``BeautifulSoup`` 对象本身一定会包含子节点,也就是说<html>标签也是 ``BeautifulSoup`` 对象的子节点:
+``BeautifulSoup`` 物件本身一定會包含子節點,也就是說<html>標籤也是 ``BeautifulSoup`` 物件的子節點:
 
 ::
 
@@ -565,7 +565,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     soup.contents[0].name
     # u'html'
 
-字符串没有 ``.contents`` 属性,因为字符串没有子节点:
+字串沒有 ``.contents`` 屬性,因為字串沒有子節點:
 
 ::
 
@@ -573,7 +573,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     text.contents
     # AttributeError: 'NavigableString' object has no attribute 'contents'
 
-通过tag的 ``.children`` 生成器,可以对tag的子节点进行循环:
+通過tag的 ``.children`` 生成器,可以對tag的子節點進行迴圈:
 
 ::
 
@@ -584,14 +584,14 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
 .descendants
 ..............
 
-``.contents`` 和 ``.children`` 属性仅包含tag的直接子节点.例如,<head>标签只有一个直接子节点<title>
+``.contents`` 和 ``.children`` 屬性僅包含tag的直接子節點.例如,<head>標籤只有一個直接子節點<title>
 
 ::
 
     head_tag.contents
     # [<title>The Dormouse's story</title>]
 
-但是<title>标签也包含一个子节点:字符串 “The Dormouse’s story”,这种情况下字符串 “The Dormouse’s story”也属于<head>标签的子孙节点. ``.descendants`` 属性可以对所有tag的子孙节点进行递归循环 [5]_ :
+但是<title>標籤也包含一個子節點:字串 “The Dormouse’s story”,這種情況下字串 “The Dormouse’s story”也屬於<head>標籤的子孫節點. ``.descendants`` 屬性可以對所有tag的子孫節點進行遞迴迴圈 [5]_ :
 
 ::
 
@@ -600,7 +600,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
         # <title>The Dormouse's story</title>
         # The Dormouse's story
 
-上面的例子中, <head>标签只有一个子节点,但是有2个子孙节点:<head>节点和<head>的子节点, ``BeautifulSoup`` 有一个直接子节点(<html>节点),却有很多子孙节点:
+上面的例子中, <head>標籤只有一個子節點,但是有2個子孫節點:<head>節點和<head>的子節點, ``BeautifulSoup`` 有一個直接子節點(<html>節點),卻有很多子孫節點:
 
 ::
 
@@ -612,14 +612,14 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
 .string
 ........
 
-如果tag只有一个 ``NavigableString`` 类型子节点,那么这个tag可以使用 ``.string`` 得到子节点:
+如果tag只有一個 ``NavigableString`` 類型子節點,那麼這個tag可以使用 ``.string`` 得到子節點:
 
 ::
 
     title_tag.string
     # u'The Dormouse's story'
 
-如果一个tag仅有一个子节点,那么这个tag也可以使用 ``.string`` 方法,输出结果与当前唯一子节点的 ``.string`` 结果相同:
+如果一個tag僅有一個子節點,那麼這個tag也可以使用 ``.string`` 方法,輸出結果與當前唯一子節點的 ``.string`` 結果相同:
 
 ::
 
@@ -629,7 +629,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     head_tag.string
     # u'The Dormouse's story'
 
-如果tag包含了多个子节点,tag就无法确定 ``.string`` 方法应该调用哪个子节点的内容, ``.string`` 的输出结果是 ``None`` :
+如果tag包含了多個子節點,tag就無法確定 ``.string`` 方法應該調用哪個子節點的內容, ``.string`` 的輸出結果是 ``None`` :
 
 ::
 
@@ -639,7 +639,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
 .strings 和 stripped_strings
 .............................
 
-如果tag中包含多个字符串 [2]_ ,可以使用 ``.strings`` 来循环获取:
+如果tag中包含多個字串 [2]_ ,可以使用 ``.strings`` 來迴圈獲取:
 
 ::
 
@@ -660,7 +660,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
         # u'...'
         # u'\n'
 
-输出的字符串中可能包含了很多空格或空行,使用 ``.stripped_strings`` 可以去除多余空白内容:
+輸出的字串中可能包含了很多空格或空行,使用 ``.stripped_strings`` 可以去除多餘空白內容:
 
 ::
 
@@ -677,17 +677,17 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
         # u';\nand they lived at the bottom of a well.'
         # u'...'
 
-全部是空格的行会被忽略掉,段首和段末的空白会被删除
+全部是空格的行會被忽略掉,段首和段末的空白會被刪除
 
-父节点
+父節點
 -------
 
-继续分析文档树,每个tag或字符串都有父节点:被包含在某个tag中
+繼續分析文檔樹,每個tag或字串都有父節點:被包含在某個tag中
 
 .parent
 ........
 
-通过 ``.parent`` 属性来获取某个元素的父节点.在例子“爱丽丝”的文档中,<head>标签是<title>标签的父节点:
+通過 ``.parent`` 屬性來獲取某個元素的父節點.在例子“愛麗絲”的文檔中,<head>標籤是<title>標籤的父節點:
 
 ::
 
@@ -697,14 +697,14 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     title_tag.parent
     # <head><title>The Dormouse's story</title></head>
 
-文档title的字符串也有父节点:<title>标签
+文檔title的字串也有父節點:<title>標籤
 
 ::
 
     title_tag.string.parent
     # <title>The Dormouse's story</title>
 
-文档的顶层节点比如<html>的父节点是 ``BeautifulSoup`` 对象:
+文檔的頂層節點比如<html>的父節點是 ``BeautifulSoup`` 物件:
 
 ::
 
@@ -712,7 +712,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     type(html_tag.parent)
     # <class 'bs4.BeautifulSoup'>
 
-``BeautifulSoup`` 对象的 ``.parent`` 是None:
+``BeautifulSoup`` 對象的 ``.parent`` 是None:
 
 ::
 
@@ -722,7 +722,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
 .parents
 ..........
 
-通过元素的 ``.parents`` 属性可以递归得到元素的所有父辈节点,下面的例子使用了 ``.parents`` 方法遍历了<a>标签到根节点的所有节点.
+通過元素的 ``.parents`` 屬性可以遞迴得到元素的所有父輩節點,下面的例子使用了 ``.parents`` 方法遍歷了<a>標籤到根節點的所有節點.
 
 ::
 
@@ -740,10 +740,10 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     # [document]
     # None
 
-兄弟节点
+兄弟節點
 ---------
 
-看一段简单的例子:
+看一段簡單的例子:
 
 ::
 
@@ -762,12 +762,12 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     #  </body>
     # </html>
 
-因为<b>标签和<c>标签是同一层:他们是同一个元素的子节点,所以<b>和<c>可以被称为兄弟节点.一段文档以标准格式输出时,兄弟节点有相同的缩进级别.在代码中也可以使用这种关系.
+因為<b>標籤和<c>標籤是同一層:他們是同一個元素的子節點,所以<b>和<c>可以被稱為兄弟節點.一段文檔以標準格式輸出時,兄弟節點有相同的縮進級別.在代碼中也可以使用這種關係.
 
 .next_sibling 和 .previous_sibling
 ....................................
 
-在文档树中,使用 ``.next_sibling`` 和 ``.previous_sibling`` 属性来查询兄弟节点:
+在文檔樹中,使用 ``.next_sibling`` 和 ``.previous_sibling`` 屬性來查詢兄弟節點:
 
 ::
 
@@ -777,7 +777,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     sibling_soup.c.previous_sibling
     # <b>text1</b>
 
-<b>标签有 ``.next_sibling`` 属性,但是没有 ``.previous_sibling`` 属性,因为<b>标签在同级节点中是第一个.同理,<c>标签有 ``.previous_sibling`` 属性,却没有 ``.next_sibling`` 属性:
+<b>標籤有 ``.next_sibling`` 屬性,但是沒有 ``.previous_sibling`` 屬性,因為<b>標籤在同級節點中是第一個.同理,<c>標籤有 ``.previous_sibling`` 屬性,卻沒有 ``.next_sibling`` 屬性:
 
 ::
 
@@ -786,7 +786,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     print(sibling_soup.c.next_sibling)
     # None
 
-例子中的字符串“text1”和“text2”不是兄弟节点,因为它们的父节点不同:
+例子中的字串“text1”和“text2”不是兄弟節點,因為它們的父節點不同:
 
 ::
 
@@ -796,7 +796,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     print(sibling_soup.b.string.next_sibling)
     # None
 
-实际文档中的tag的 ``.next_sibling`` 和 ``.previous_sibling`` 属性通常是字符串或空白. 看看“爱丽丝”文档:
+實際文檔中的tag的 ``.next_sibling`` 和 ``.previous_sibling`` 屬性通常是字串或空白. 看看“愛麗絲”文檔:
 
 ::
 
@@ -804,7 +804,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a>
     <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>
 
-如果以为第一个<a>标签的 ``.next_sibling`` 结果是第二个<a>标签,那就错了,真实结果是第一个<a>标签和第二个<a>标签之间的顿号和换行符:
+如果以為第一個<a>標籤的 ``.next_sibling`` 結果是第二個<a>標籤,那就錯了,真實結果是第一個<a>標籤和第二個<a>標籤之間的頓號和分行符號:
 
 ::
 
@@ -815,7 +815,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
     link.next_sibling
     # u',\n'
 
-第二个<a>标签是顿号的 ``.next_sibling`` 属性:
+第二個<a>標籤是頓號的 ``.next_sibling`` 屬性:
 
 ::
 
@@ -825,7 +825,7 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
 .next_siblings 和 .previous_siblings
 ......................................
 
-通过 ``.next_siblings`` 和 ``.previous_siblings`` 属性可以对当前节点的兄弟节点迭代输出:
+通過 ``.next_siblings`` 和 ``.previous_siblings`` 屬性可以對當前節點的兄弟節點反覆運算輸出:
 
 ::
 
@@ -847,24 +847,24 @@ tag的 ``.contents`` 属性可以将tag的子节点以列表的方式输出:
         # u'Once upon a time there were three little sisters; and their names were\n'
         # None
 
-回退和前进
+回退和前進
 ----------
 
-看一下“爱丽丝” 文档:
+看一下“愛麗絲” 文檔:
 
 ::
 
     <html><head><title>The Dormouse's story</title></head>
     <p class="title"><b>The Dormouse's story</b></p>
 
-HTML解析器把这段字符串转换成一连串的事件: "打开<html>标签","打开一个<head>标签","打开一个<title>标签","添加一段字符串","关闭<title>标签","打开<p>标签",等等.Beautiful Soup提供了重现解析器初始化过程的方法.
+HTML解析器把這段字串轉換成一連串的事件: "打開<html>標籤","打開一個<head>標籤","打開一個<title>標籤","添加一段字串","關閉<title>標籤","打開<p>標籤",等等.Beautiful Soup提供了重現解析器初始化過程的方法.
 
 .next_element 和 .previous_element
 ...................................
 
-``.next_element`` 属性指向解析过程中下一个被解析的对象(字符串或tag),结果可能与 ``.next_sibling`` 相同,但通常是不一样的.
+``.next_element`` 屬性指向解析過程中下一個被解析的物件(字串或tag),結果可能與 ``.next_sibling`` 相同,但通常是不一樣的.
 
-这是“爱丽丝”文档中最后一个<a>标签,它的 ``.next_sibling`` 结果是一个字符串,因为当前的解析过程 [2]_ 因为当前的解析过程因为遇到了<a>标签而中断了:
+這是“愛麗絲”文檔中最後一個<a>標籤,它的 ``.next_sibling`` 結果是一個字串,因為當前的解析過程 [2]_ 因為當前的解析過程因為遇到了<a>標籤而中斷了:
 
 ::
 
@@ -875,16 +875,16 @@ HTML解析器把这段字符串转换成一连串的事件: "打开<html>标签"
     last_a_tag.next_sibling
     # '; and they lived at the bottom of a well.'
 
-但这个<a>标签的 ``.next_element`` 属性结果是在<a>标签被解析之后的解析内容,不是<a>标签后的句子部分,应该是字符串"Tillie":
+但這個<a>標籤的 ``.next_element`` 屬性結果是在<a>標籤被解析之後的解析內容,不是<a>標籤後的句子部分,應該是字串"Tillie":
 
 ::
 
     last_a_tag.next_element
     # u'Tillie'
 
-这是因为在原始文档中,字符串“Tillie” 在分号前出现,解析器先进入<a>标签,然后是字符串“Tillie”,然后关闭</a>标签,然后是分号和剩余部分.分号与<a>标签在同一层级,但是字符串“Tillie”会被先解析.
+這是因為在原始文檔中,字串“Tillie” 在分號前出現,解析器先進入<a>標籤,然後是字串“Tillie”,然後關閉</a>標籤,然後是分號和剩餘部分.分號與<a>標籤在同一層級,但是字串“Tillie”會被先解析.
 
-``.previous_element`` 属性刚好与 ``.next_element`` 相反,它指向当前被解析的对象的前一个解析对象:
+``.previous_element`` 屬性剛好與 ``.next_element`` 相反,它指向當前被解析的物件的前一個解析物件:
 
 ::
 
@@ -896,7 +896,7 @@ HTML解析器把这段字符串转换成一连串的事件: "打开<html>标签"
 .next_elements 和 .previous_elements
 .....................................
 
-通过 ``.next_elements`` 和 ``.previous_elements`` 的迭代器就可以向前或向后访问文档的解析内容,就好像文档正在被解析一样:
+通過 ``.next_elements`` 和 ``.previous_elements`` 的反覆運算器就可以向前或向後訪問文檔的解析內容,就好像文檔正在被解析一樣:
 
 ::
 
@@ -910,12 +910,12 @@ HTML解析器把这段字符串转换成一连串的事件: "打开<html>标签"
     # u'\n'
     # None
 
-搜索文档树
+搜索文檔樹
 ==========
 
-Beautiful Soup定义了很多搜索方法,这里着重介绍2个: ``find()`` 和 ``find_all()`` .其它方法的参数和用法类似,请读者举一反三.
+Beautiful Soup定義了很多搜索方法,這裡著重介紹2個: ``find()`` 和 ``find_all()`` .其它方法的參數和用法類似,請讀者舉一反三.
 
-再以“爱丽丝”文档作为例子:
+再以“愛麗絲”文檔作為例子:
 
 ::
 
@@ -936,29 +936,29 @@ Beautiful Soup定义了很多搜索方法,这里着重介绍2个: ``find()`` 和
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html_doc, 'html.parser')
 
-使用 ``find_all()`` 类似的方法可以查找到想要查找的文档内容
+使用 ``find_all()`` 類似的方法可以查找到想要查找的文檔內容
 
-过滤器
+篩檢程式
 ------
 
-介绍 ``find_all()`` 方法前,先介绍一下过滤器的类型 [3]_ ,这些过滤器贯穿整个搜索的API.过滤器可以被用在tag的name中,节点的属性中,字符串中或他们的混合中.
+介紹 ``find_all()`` 方法前,先介紹一下篩檢程式的類型 [3]_ ,這些篩檢程式貫穿整個搜索的API.篩檢程式可以被用在tag的name中,節點的屬性中,字串中或他們的混合中.
 
-字符串
+字串
 ............
 
-最简单的过滤器是字符串.在搜索方法中传入一个字符串参数,Beautiful Soup会查找与字符串完整匹配的内容,下面的例子用于查找文档中所有的<b>标签:
+最簡單的篩檢程式是字串.在搜索方法中傳入一個字串參數,Beautiful Soup會查找與字串完整匹配的內容,下面的例子用於查找文檔中所有的<b>標籤:
 
 ::
 
     soup.find_all('b')
     # [<b>The Dormouse's story</b>]
 
-如果传入字节码参数,Beautiful Soup会当作UTF-8编码,可以传入一段Unicode 编码来避免Beautiful Soup解析编码出错
+如果傳入位元組碼參數,Beautiful Soup會當作UTF-8編碼,可以傳入一段Unicode 編碼來避免Beautiful Soup解析編碼出錯
 
-正则表达式
+規則運算式
 ..........
 
-如果传入正则表达式作为参数,Beautiful Soup会通过正则表达式的 ``match()`` 来匹配内容.下面例子中找出所有以b开头的标签,这表示<body>和<b>标签都应该被找到:
+如果傳入規則運算式作為參數,Beautiful Soup會通過規則運算式的 ``match()`` 來匹配內容.下面例子中找出所有以b開頭的標籤,這表示<body>和<b>標籤都應該被找到:
 
 ::
 
@@ -968,7 +968,7 @@ Beautiful Soup定义了很多搜索方法,这里着重介绍2个: ``find()`` 和
     # body
     # b
 
-下面代码找出所有名字中包含"t"的标签:
+下面代碼找出所有名字中包含"t"的標籤:
 
 ::
 
@@ -980,7 +980,7 @@ Beautiful Soup定义了很多搜索方法,这里着重介绍2个: ``find()`` 和
 列表
 ....
 
-如果传入列表参数,Beautiful Soup会将与列表中任一元素匹配的内容返回.下面代码找到文档中所有<a>标签和<b>标签:
+如果傳入列表參數,Beautiful Soup會將與清單中任一元素匹配的內容返回.下面代碼找到文檔中所有<a>標籤和<b>標籤:
 
 ::
 
@@ -993,7 +993,7 @@ Beautiful Soup定义了很多搜索方法,这里着重介绍2个: ``find()`` 和
 True
 .....
 
-``True`` 可以匹配任何值,下面代码查找到所有的tag,但是不会返回字符串节点
+``True`` 可以匹配任何值,下面代碼查找到所有的tag,但是不會返回字串節點
 
 ::
 
@@ -1014,16 +1014,16 @@ True
 方法
 ....
 
-如果没有合适过滤器,那么还可以定义一个方法,方法只接受一个元素参数 [4]_ ,如果这个方法返回 ``True`` 表示当前元素匹配并且被找到,如果不是则反回 ``False``
+如果沒有合適篩檢程式,那麼還可以定義一個方法,方法只接受一個元素參數 [4]_ ,如果這個方法返回 ``True`` 表示當前元素匹配並且被找到,如果不是則反回 ``False``
 
-下面方法校验了当前元素,如果包含 ``class`` 属性却不包含 ``id`` 属性,那么将返回 ``True``:
+下面方法校驗了當前元素,如果包含 ``class`` 屬性卻不包含 ``id`` 屬性,那麼將返回 ``True``:
 
 ::
 
     def has_class_but_no_id(tag):
         return tag.has_attr('class') and not tag.has_attr('id')
 
-将这个方法作为参数传入 ``find_all()`` 方法,将得到所有<p>标签:
+將這個方法作為參數傳入 ``find_all()`` 方法,將得到所有<p>標籤:
 
 ::
 
@@ -1032,10 +1032,10 @@ True
     #  <p class="story">Once upon a time there were...</p>,
     #  <p class="story">...</p>]
 
-返回结果中只有<p>标签没有<a>标签,因为<a>标签还定义了"id",没有返回<html>和<head>,因为<html>和<head>中没有定义"class"属性.
+返回結果中只有<p>標籤沒有<a>標籤,因為<a>標籤還定義了"id",沒有返回<html>和<head>,因為<html>和<head>中沒有定義"class"屬性.
 
-通过一个方法来过滤一类标签属性的时候, 这个方法的参数是要被过滤的属性的值, 而不是这个标签.
-下面的例子是找出 ``href`` 属性不符合指定正则的 ``a`` 标签.
+通過一個方法來過濾一類標籤屬性的時候, 這個方法的參數是要被過濾的屬性的值, 而不是這個標籤.
+下面的例子是找出 ``href`` 屬性不符合指定正則的 ``a`` 標籤.
 
 ::
 
@@ -1046,7 +1046,7 @@ True
 	# [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
 	#  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 
-标签过滤方法可以使用复杂方法. 下面的例子可以过滤出前后都有文字的标签.
+標籤過濾方法可以使用複雜方法. 下面的例子可以過濾出前後都有文字的標籤.
 
 ::
 
@@ -1063,14 +1063,14 @@ True
     # a
     # p
 
-现在来了解一下搜索方法的细节
+現在來瞭解一下搜索方法的細節
 
 find_all()
 -----------
 
 find_all( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
-``find_all()`` 方法搜索当前tag的所有tag子节点,并判断是否符合过滤器的条件.这里有几个例子:
+``find_all()`` 方法搜索當前tag的所有tag子節點,並判斷是否符合篩檢程式的條件.這裡有幾個例子:
 
 ::
 
@@ -1092,42 +1092,42 @@ find_all( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
     soup.find(string=re.compile("sisters"))
     # u'Once upon a time there were three little sisters; and their names were\n'
 
-有几个方法很相似,还有几个方法是新的,参数中的 ``string`` 和 ``id`` 是什么含义? 为什么 ``find_all("p", "title")`` 返回的是CSS Class为"title"的<p>标签? 我们来仔细看一下 ``find_all()`` 的参数
+有幾個方法很相似,還有幾個方法是新的,參數中的 ``string`` 和 ``id`` 是什麼含義? 為什麼 ``find_all("p", "title")`` 返回的是CSS Class為"title"的<p>標籤? 我們來仔細看一下 ``find_all()`` 的參數
 
-name 参数
+name 參數
 ..........
 
-``name`` 参数可以查找所有名字为 ``name`` 的tag,字符串对象会被自动忽略掉.
+``name`` 參數可以查找所有名字為 ``name`` 的tag,字串物件會被自動忽略掉.
 
-简单的用法如下:
+簡單的用法如下:
 
 ::
 
     soup.find_all("title")
     # [<title>The Dormouse's story</title>]
 
-重申: 搜索 ``name`` 参数的值可以使任一类型的 `过滤器`_ ,字符窜,正则表达式,列表,方法或是 ``True`` .
+重申: 搜索 ``name`` 參數的值可以使任一類型的 `篩檢程式`_ ,字元竄,規則運算式,清單,方法或是 ``True`` .
 
-keyword 参数
+keyword 參數
 ..............
 
-如果一个指定名字的参数不是搜索内置的参数名,搜索时会把该参数当作指定名字tag的属性来搜索,如果包含一个名字为 ``id`` 的参数,Beautiful Soup会搜索每个tag的"id"属性.
+如果一個指定名字的參數不是搜索內置的參數名,搜索時會把該參數當作指定名字tag的屬性來搜索,如果包含一個名字為 ``id`` 的參數,Beautiful Soup會搜索每個tag的"id"屬性.
 
 ::
 
     soup.find_all(id='link2')
     # [<a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
 
-如果传入 ``href`` 参数,Beautiful Soup会搜索每个tag的"href"属性:
+如果傳入 ``href`` 參數,Beautiful Soup會搜索每個tag的"href"屬性:
 
 ::
 
     soup.find_all(href=re.compile("elsie"))
     # [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>]
 
-搜索指定名字的属性时可以使用的参数值包括 `字符串`_ , `正则表达式`_ , `列表`_, `True`_ .
+搜索指定名字的屬性時可以使用的參數值包括 `字串`_ , `規則運算式`_ , `列表`_, `True`_ .
 
-下面的例子在文档树中查找所有包含 ``id`` 属性的tag,无论 ``id`` 的值是什么:
+下面的例子在文檔樹中查找所有包含 ``id`` 屬性的tag,無論 ``id`` 的值是什麼:
 
 ::
 
@@ -1136,14 +1136,14 @@ keyword 参数
     #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
     #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 
-使用多个指定名字的参数可以同时过滤tag的多个属性:
+使用多個指定名字的參數可以同時過濾tag的多個屬性:
 
 ::
 
     soup.find_all(href=re.compile("elsie"), id='link1')
     # [<a class="sister" href="http://example.com/elsie" id="link1">three</a>]
 
-有些tag属性在搜索不能使用,比如HTML5中的 data-* 属性:
+有些tag屬性在搜索不能使用,比如HTML5中的 data-* 屬性:
 
 ::
 
@@ -1151,7 +1151,7 @@ keyword 参数
     data_soup.find_all(data-foo="value")
     # SyntaxError: keyword can't be an expression
 
-但是可以通过 ``find_all()`` 方法的 ``attrs`` 参数定义一个字典参数来搜索包含特殊属性的tag:
+但是可以通過 ``find_all()`` 方法的 ``attrs`` 參數定義一個字典參數來搜索包含特殊屬性的tag:
 
 ::
 
@@ -1161,7 +1161,7 @@ keyword 参数
 按CSS搜索
 ..........
 
-按照CSS类名搜索tag的功能非常实用,但标识CSS类名的关键字 ``class`` 在Python中是保留字,使用 ``class`` 做参数会导致语法错误.从Beautiful Soup的4.1.1版本开始,可以通过 ``class_`` 参数搜索有指定CSS类名的tag:
+按照CSS類名搜索tag的功能非常實用,但標識CSS類名的關鍵字 ``class`` 在Python中是保留字,使用 ``class`` 做參數會導致語法錯誤.從Beautiful Soup的4.1.1版本開始,可以通過 ``class_`` 參數搜索有指定CSS類名的tag:
 
 ::
 
@@ -1170,7 +1170,7 @@ keyword 参数
     #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
     #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 
-``class_`` 参数同样接受不同类型的 ``过滤器`` ,字符串,正则表达式,方法或 ``True`` :
+``class_`` 參數同樣接受不同類型的 ``篩檢程式`` ,字串,規則運算式,方法或 ``True`` :
 
 ::
 
@@ -1185,7 +1185,7 @@ keyword 参数
     #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
     #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 
-tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以分别搜索tag中的每个CSS类名:
+tag的 ``class`` 屬性是 `多值屬性`_ .按照CSS類名搜索tag時,可以分別搜索tag中的每個CSS類名:
 
 ::
 
@@ -1196,14 +1196,14 @@ tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以�
     css_soup.find_all("p", class_="body")
     # [<p class="body strikeout"></p>]
 
-搜索 ``class`` 属性时也可以通过CSS值完全匹配:
+搜索 ``class`` 屬性時也可以通過CSS值完全匹配:
 
 ::
 
     css_soup.find_all("p", class_="body strikeout")
     # [<p class="body strikeout"></p>]
 
-完全匹配 ``class`` 的值时,如果CSS类名的顺序与实际不符,将搜索不到结果:
+完全匹配 ``class`` 的值時,如果CSS類名的順序與實際不符,將搜索不到結果:
 
 ::
 
@@ -1212,10 +1212,10 @@ tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以�
     #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
     #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 
-``string`` 参数
+``string`` 參數
 ...............
 
-通过 ``string`` 参数可以搜搜文档中的字符串内容.与 ``name`` 参数的可选值一样, ``string`` 参数接受 `字符串`_ , `正则表达式`_ , `列表`_, `True`_ . 看例子:
+通過 ``string`` 參數可以搜搜文檔中的字串內容.與 ``name`` 參數的可選值一樣, ``string`` 參數接受 `字串`_ , `規則運算式`_ , `列表`_, `True`_ . 看例子:
 
 ::
 
@@ -1235,19 +1235,19 @@ tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以�
     soup.find_all(string=is_the_only_string_within_a_tag)
     # [u"The Dormouse's story", u"The Dormouse's story", u'Elsie', u'Lacie', u'Tillie', u'...']
 
-虽然 ``string`` 参数用于搜索字符串,还可以与其它参数混合使用来过滤tag.Beautiful Soup会找到 ``.string`` 方法与 ``string`` 参数值相符的tag.下面代码用来搜索内容里面包含“Elsie”的<a>标签:
+雖然 ``string`` 參數用於搜索字串,還可以與其它參數混合使用來過濾tag.Beautiful Soup會找到 ``.string`` 方法與 ``string`` 參數值相符的tag.下面代碼用來搜索內容裡面包含“Elsie”的<a>標籤:
 
 ::
 
     soup.find_all("a", string="Elsie")
     # [<a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>]
 
-``limit`` 参数
+``limit`` 參數
 ...............
 
-``find_all()`` 方法返回全部的搜索结构,如果文档树很大那么搜索会很慢.如果我们不需要全部结果,可以使用 ``limit`` 参数限制返回结果的数量.效果与SQL中的limit关键字类似,当搜索到的结果数量达到 ``limit`` 的限制时,就停止搜索返回结果.
+``find_all()`` 方法返回全部的搜索結構,如果文檔樹很大那麼搜索會很慢.如果我們不需要全部結果,可以使用 ``limit`` 參數限制返回結果的數量.效果與SQL中的limit關鍵字類似,當搜索到的結果數量達到 ``limit`` 的限制時,就停止搜索返回結果.
 
-文档树中有3个tag符合搜索条件,但结果只返回了2个,因为我们限制了返回数量:
+文檔樹中有3個tag符合搜索條件,但結果只返回了2個,因為我們限制了返回數量:
 
 ::
 
@@ -1255,12 +1255,12 @@ tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以�
     # [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
     #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
 
-``recursive`` 参数
+``recursive`` 參數
 ...................
 
-调用tag的 ``find_all()`` 方法时,Beautiful Soup会检索当前tag的所有子孙节点,如果只想搜索tag的直接子节点,可以使用参数 ``recursive=False`` .
+調用tag的 ``find_all()`` 方法時,Beautiful Soup會檢索當前tag的所有子孫節點,如果只想搜索tag的直接子節點,可以使用參數 ``recursive=False`` .
 
-一段简单的文档:
+一段簡單的文檔:
 
 ::
 
@@ -1272,7 +1272,7 @@ tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以�
      </head>
     ...
 
-是否使用 ``recursive`` 参数的搜索结果:
+是否使用 ``recursive`` 參數的搜索結果:
 
 ::
 
@@ -1282,7 +1282,7 @@ tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以�
     soup.html.find_all("title", recursive=False)
     # []
 
-这是文档片段
+這是文檔片段
 
 ::
 
@@ -1294,25 +1294,25 @@ tag的 ``class`` 属性是 `多值属性`_ .按照CSS类名搜索tag时,可以�
 		</head>
 		...
 
-<title>标签在 <html> 标签下, 但并不是直接子节点, <head> 标签才是直接子节点.
-在允许查询所有后代节点时 Beautiful Soup 能够查找到 <title> 标签.
-但是使用了 ``recursive=False``  参数之后,只能查找直接子节点,这样就查不到 <title> 标签了.
+<title>標籤在 <html> 標籤下, 但並不是直接子節點, <head> 標籤才是直接子節點.
+在允許查詢所有後代節點時 Beautiful Soup 能夠查找到 <title> 標籤.
+但是使用了 ``recursive=False``  參數之後,只能查找直接子節點,這樣就查不到 <title> 標籤了.
 
-Beautiful Soup 提供了多种DOM树搜索方法. 这些方法都使用了类似的参数定义.
-比如这些方法: ``find_all()``: ``name``, ``attrs``, ``text``, ``limit``.
-但是只有 ``find_all()`` 和 ``find()`` 支持 ``recursive`` 参数.
+Beautiful Soup 提供了多種DOM樹搜索方法. 這些方法都使用了類似的參數定義.
+比如這些方法: ``find_all()``: ``name``, ``attrs``, ``text``, ``limit``.
+但是只有 ``find_all()`` 和 ``find()`` 支持 ``recursive`` 參數.
 
-像调用 ``find_all()`` 一样调用tag
+像調用 ``find_all()`` 一樣調用tag
 ----------------------------------
 
-``find_all()`` 几乎是Beautiful Soup中最常用的搜索方法,所以我们定义了它的简写方法. ``BeautifulSoup`` 对象和 ``tag`` 对象可以被当作一个方法来使用,这个方法的执行结果与调用这个对象的 ``find_all()`` 方法相同,下面两行代码是等价的:
+``find_all()`` 幾乎是Beautiful Soup中最常用的搜索方法,所以我們定義了它的簡寫方法. ``BeautifulSoup`` 物件和 ``tag`` 物件可以被當作一個方法來使用,這個方法的執行結果與調用這個物件的 ``find_all()`` 方法相同,下面兩行代碼是等價的:
 
 ::
 
     soup.find_all("a")
     soup("a")
 
-这两行代码也是等价的:
+這兩行代碼也是等價的:
 
 ::
 
@@ -1324,7 +1324,7 @@ find()
 
 find( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
-``find_all()`` 方法将返回文档中符合条件的所有tag,尽管有时候我们只想得到一个结果.比如文档中只有一个<body>标签,那么使用 ``find_all()`` 方法来查找<body>标签就不太合适, 使用 ``find_all`` 方法并设置 ``limit=1`` 参数不如直接使用  ``find()`` 方法.下面两行代码是等价的:
+``find_all()`` 方法將返回文檔中符合條件的所有tag,儘管有時候我們只想得到一個結果.比如文檔中只有一個<body>標籤,那麼使用 ``find_all()`` 方法來查找<body>標籤就不太合適, 使用 ``find_all`` 方法並設置 ``limit=1`` 參數不如直接使用  ``find()`` 方法.下面兩行代碼是等價的:
 
 ::
 
@@ -1334,16 +1334,16 @@ find( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
     soup.find('title')
     # <title>The Dormouse's story</title>
 
-唯一的区别是 ``find_all()`` 方法的返回结果是值包含一个元素的列表,而 ``find()`` 方法直接返回结果.
+唯一的區別是 ``find_all()`` 方法的返回結果是值包含一個元素的清單,而 ``find()`` 方法直接返回結果.
 
-``find_all()`` 方法没有找到目标是返回空列表, ``find()`` 方法找不到目标时,返回 ``None`` .
+``find_all()`` 方法沒有找到目標是返回空清單, ``find()`` 方法找不到目標時,返回 ``None`` .
 
 ::
 
     print(soup.find("nosuchtag"))
     # None
 
-``soup.head.title`` 是 `tag的名字`_ 方法的简写.这个简写的原理就是多次调用当前tag的 ``find()`` 方法:
+``soup.head.title`` 是 `tag的名字`_ 方法的簡寫.這個簡寫的原理就是多次調用當前tag的 ``find()`` 方法:
 
 ::
 
@@ -1360,9 +1360,9 @@ find_parents( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
 find_parent( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
-我们已经用了很大篇幅来介绍 ``find_all()`` 和 ``find()`` 方法,Beautiful Soup中还有10个用于搜索的API.它们中的五个用的是与 ``find_all()`` 相同的搜索参数,另外5个与 ``find()`` 方法的搜索参数类似.区别仅是它们搜索文档的不同部分.
+我們已經用了很大篇幅來介紹 ``find_all()`` 和 ``find()`` 方法,Beautiful Soup中還有10個用於搜索的API.它們中的五個用的是與 ``find_all()`` 相同的搜索參數,另外5個與 ``find()`` 方法的搜索參數類似.區別僅是它們搜索文檔的不同部分.
 
-记住: ``find_all()`` 和 ``find()`` 只搜索当前节点的所有子节点,孙子节点等. ``find_parents()`` 和 ``find_parent()`` 用来搜索当前节点的父辈节点,搜索方法与普通tag的搜索方法相同,搜索文档\搜索文档包含的内容. 我们从一个文档中的一个叶子节点开始:
+記住: ``find_all()`` 和 ``find()`` 只搜索當前節點的所有子節點,孫子節點等. ``find_parents()`` 和 ``find_parent()`` 用來搜索當前節點的父輩節點,搜索方法與普通tag的搜索方法相同,搜索文檔\搜索文檔包含的內容. 我們從一個文檔中的一個葉子節點開始:
 
 ::
 
@@ -1383,9 +1383,9 @@ find_parent( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
     a_string.find_parents("p", class="title")
     # []
 
-文档中的一个<a>标签是是当前叶子节点的直接父节点,所以可以被找到.还有一个<p>标签,是目标叶子节点的间接父辈节点,所以也可以被找到.包含class值为"title"的<p>标签不是不是目标叶子节点的父辈节点,所以通过 ``find_parents()`` 方法搜索不到.
+文檔中的一個<a>標籤是是當前葉子節點的直接父節點,所以可以被找到.還有一個<p>標籤,是目標葉子節點的間接父輩節點,所以也可以被找到.包含class值為"title"的<p>標籤不是不是目標葉子節點的父輩節點,所以通過 ``find_parents()`` 方法搜索不到.
 
-``find_parent()`` 和 ``find_parents()`` 方法会让人联想到 `.parent`_ 和 `.parents`_ 属性.它们之间的联系非常紧密.搜索父辈节点的方法实际上就是对 ``.parents`` 属性的迭代搜索.
+``find_parent()`` 和 ``find_parents()`` 方法會讓人聯想到 `.parent`_ 和 `.parents`_ 屬性.它們之間的聯繫非常緊密.搜索父輩節點的方法實際上就是對 ``.parents`` 屬性的反覆運算搜索.
 
 find_next_siblings() 和 find_next_sibling()
 -------------------------------------------
@@ -1394,7 +1394,7 @@ find_next_siblings( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ 
 
 find_next_sibling( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
-这2个方法通过 `.next_siblings`_ 属性对当tag的所有后面解析 [5]_ 的兄弟tag节点进行迭代, ``find_next_siblings()`` 方法返回所有符合条件的后面的兄弟节点, ``find_next_sibling()`` 只返回符合条件的后面的第一个tag节点.
+這2個方法通過 `.next_siblings`_ 屬性對當tag的所有後面解析 [5]_ 的兄弟tag節點進行反覆運算, ``find_next_siblings()`` 方法返回所有符合條件的後面的兄弟節點, ``find_next_sibling()`` 只返回符合條件的後面的第一個tag節點.
 
 ::
 
@@ -1417,7 +1417,7 @@ find_previous_siblings( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwarg
 
 find_previous_sibling( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
-这2个方法通过 `.previous_siblings`_ 属性对当前tag的前面解析 [5]_ 的兄弟tag节点进行迭代, ``find_previous_siblings()`` 方法返回所有符合条件的前面的兄弟节点, ``find_previous_sibling()`` 方法返回第一个符合条件的前面的兄弟节点:
+這2個方法通過 `.previous_siblings`_ 屬性對當前tag的前面解析 [5]_ 的兄弟tag節點進行反覆運算, ``find_previous_siblings()`` 方法返回所有符合條件的前面的兄弟節點, ``find_previous_sibling()`` 方法返回第一個符合條件的前面的兄弟節點:
 
 ::
 
@@ -1440,7 +1440,7 @@ find_all_next( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
 find_next( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
-这2个方法通过 `.next_elements`_ 属性对当前tag的之后的 [5]_ tag和字符串进行迭代, ``find_all_next()`` 方法返回所有符合条件的节点, ``find_next()`` 方法返回第一个符合条件的节点:
+這2個方法通過 `.next_elements`_ 屬性對當前tag的之後的 [5]_ tag和字串進行反覆運算, ``find_all_next()`` 方法返回所有符合條件的節點, ``find_next()`` 方法返回第一個符合條件的節點:
 
 ::
 
@@ -1455,7 +1455,7 @@ find_next( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
     first_link.find_next("p")
     # <p class="story">...</p>
 
-第一个例子中,字符串 “Elsie”也被显示出来,尽管它被包含在我们开始查找的<a>标签的里面.第二个例子中,最后一个<p>标签也被显示出来,尽管它与我们开始查找位置的<a>标签不属于同一部分.例子中,搜索的重点是要匹配过滤器的条件,并且在文档中出现的顺序而不是开始查找的元素的位置.
+第一個例子中,字串 “Elsie”也被顯示出來,儘管它被包含在我們開始查找的<a>標籤的裡面.第二個例子中,最後一個<p>標籤也被顯示出來,儘管它與我們開始查找位置的<a>標籤不屬於同一部分.例子中,搜索的重點是要匹配篩檢程式的條件,並且在文檔中出現的順序而不是開始查找的元素的位置.
 
 find_all_previous() 和 find_previous()
 ---------------------------------------
@@ -1464,7 +1464,7 @@ find_all_previous( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
 find_previous( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
 
-这2个方法通过 `.previous_elements`_ 属性对当前节点前面 [5]_ 的tag和字符串进行迭代, ``find_all_previous()`` 方法返回所有符合条件的节点, ``find_previous()`` 方法返回第一个符合条件的节点.
+這2個方法通過 `.previous_elements`_ 屬性對當前節點前面 [5]_ 的tag和字串進行反覆運算, ``find_all_previous()`` 方法返回所有符合條件的節點, ``find_previous()`` 方法返回第一個符合條件的節點.
 
 ::
 
@@ -1479,14 +1479,14 @@ find_previous( `name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ )
     first_link.find_previous("title")
     # <title>The Dormouse's story</title>
 
-``find_all_previous("p")`` 返回了文档中的第一段(class="title"的那段),但还返回了第二段,<p>标签包含了我们开始查找的<a>标签.不要惊讶,这段代码的功能是查找所有出现在指定<a>标签之前的<p>标签,因为这个<p>标签包含了开始的<a>标签,所以<p>标签一定是在<a>之前出现的.
+``find_all_previous("p")`` 返回了文檔中的第一段(class="title"的那段),但還返回了第二段,<p>標籤包含了我們開始查找的<a>標籤.不要驚訝,這段代碼的功能是查找所有出現在指定<a>標籤之前的<p>標籤,因為這個<p>標籤包含了開始的<a>標籤,所以<p>標籤一定是在<a>之前出現的.
 
-CSS选择器
+CSS選擇器
 ------------
 
-Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selector.html>`_ [6]_ ,
-在 ``Tag`` 或 ``BeautifulSoup`` 对象的 ``.select()`` 方法中传入字符串参数,
-即可使用CSS选择器的语法找到tag:
+Beautiful Soup支持大部分的CSS選擇器 `<http://www.w3.org/TR/CSS2/selector.html>`_ [6]_ ,
+在 ``Tag`` 或 ``BeautifulSoup`` 對象的 ``.select()`` 方法中傳入字串參數,
+即可使用CSS選擇器的語法找到tag:
 
 ::
 
@@ -1496,7 +1496,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     soup.select("p:nth-of-type(3)")
     # [<p class="story">...</p>]
 
-通过tag标签逐层查找:
+通過tag標籤逐層查找:
 
 ::
 
@@ -1508,7 +1508,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     soup.select("html head title")
     # [<title>The Dormouse's story</title>]
 
-找到某个tag标签下的直接子标签 [6]_ :
+找到某個tag標籤下的直接子標籤 [6]_ :
 
 ::
 
@@ -1529,7 +1529,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     soup.select("body > a")
     # []
 
-找到兄弟节点标签:
+找到兄弟節點標籤:
 
 ::
 
@@ -1540,7 +1540,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     soup.select("#link1 + .sister")
     # [<a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
 
-通过CSS的类名查找:
+通過CSS的類名查找:
 
 ::
 
@@ -1554,7 +1554,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
     #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 
-通过tag的id查找:
+通過tag的id查找:
 
 ::
 
@@ -1564,7 +1564,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     soup.select("a#link2")
     # [<a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
 
-同时用多种CSS选择器查询元素:
+同時用多種CSS選擇器查詢元素:
 
 ::
 
@@ -1573,7 +1573,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
 	#  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>]
 
 
-通过是否存在某个属性来查找:
+通過是否存在某個屬性來查找:
 
 ::
 
@@ -1582,7 +1582,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
     #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 
-通过属性的值来查找:
+通過屬性的值來查找:
 
 ::
 
@@ -1600,7 +1600,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     soup.select('a[href*=".com/el"]')
     # [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>]
 
-通过语言设置来查找:
+通過語言設置來查找:
 
 ::
 
@@ -1616,7 +1616,7 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
     #  <p lang="en-us">Howdy, y'all</p>,
     #  <p lang="en-gb">Pip-pip, old fruit</p>]
 
-返回查找到的元素的第一个
+返回查找到的元素的第一個
 
 ::
 
@@ -1624,20 +1624,20 @@ Beautiful Soup支持大部分的CSS选择器 `<http://www.w3.org/TR/CSS2/selecto
 	# <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
 
 
-对于熟悉CSS选择器语法的人来说这是个非常方便的方法.Beautiful Soup也支持CSS选择器API,
-如果你仅仅需要CSS选择器的功能,那么直接使用 ``lxml`` 也可以,
-而且速度更快,支持更多的CSS选择器语法,但Beautiful Soup整合了CSS选择器的语法和自身方便使用API.
+對於熟悉CSS選擇器語法的人來說這是個非常方便的方法.Beautiful Soup也支持CSS選擇器API,
+如果你僅僅需要CSS選擇器的功能,那麼直接使用 ``lxml`` 也可以,
+而且速度更快,支援更多的CSS選擇器語法,但Beautiful Soup整合了CSS選擇器的語法和自身方便使用API.
 
 
-修改文档树
+修改文檔樹
 ===========
 
-Beautiful Soup的强项是文档树的搜索,但同时也可以方便的修改文档树
+Beautiful Soup的強項是文檔樹的搜索,但同時也可以方便的修改文檔樹
 
-修改tag的名称和属性
+修改tag的名稱和屬性
 -------------------
 
-在 `Attributes`_ 的章节中已经介绍过这个功能,但是再看一遍也无妨. 重命名一个tag,改变属性的值,添加或删除属性:
+在 `Attributes`_ 的章節中已經介紹過這個功能,但是再看一遍也無妨. 重命名一個tag,改變屬性的值,添加或刪除屬性:
 
 ::
 
@@ -1658,7 +1658,7 @@ Beautiful Soup的强项是文档树的搜索,但同时也可以方便的修改�
 修改 .string
 -------------
 
-给tag的 ``.string`` 属性赋值,就相当于用当前的内容替代了原来的内容:
+給tag的 ``.string`` 屬性賦值,就相當於用當前的內容替代了原來的內容:
 
 ::
 
@@ -1670,12 +1670,12 @@ Beautiful Soup的强项是文档树的搜索,但同时也可以方便的修改�
     tag
     # <a href="http://example.com/">New link text.</a>
 
-注意: 如果当前的tag包含了其它tag,那么给它的 ``.string`` 属性赋值会覆盖掉原有的所有内容包括子tag
+注意: 如果當前的tag包含了其它tag,那麼給它的 ``.string`` 屬性賦值會覆蓋掉原有的所有內容包括子tag
 
 append()
 ----------
 
-``Tag.append()`` 方法想tag中添加内容,就好像Python的列表的 ``.append()`` 方法:
+``Tag.append()`` 方法想tag中添加內容,就好像Python的列表的 ``.append()`` 方法:
 
 ::
 
@@ -1690,8 +1690,8 @@ append()
 NavigableString() 和 .new_tag()
 -----------------------------------------
 
-如果想添加一段文本内容到文档中也没问题,可以调用Python的 ``append()`` 方法
-或调用 ``NavigableString`` 的构造方法:
+如果想添加一段文本內容到文檔中也沒問題,可以調用Python的 ``append()`` 方法
+或調用 ``NavigableString`` 的構造方法:
 
 ::
 
@@ -1705,7 +1705,7 @@ NavigableString() 和 .new_tag()
     tag.contents
     # [u'Hello', u' there']
 
-如果想要创建一段注释,或 ``NavigableString`` 的任何子类, 只要调用 NavigableString 的构造方法:
+如果想要創建一段注釋,或 ``NavigableString`` 的任何子類, 只要調用 NavigableString 的構造方法:
 
 ::
 
@@ -1717,9 +1717,9 @@ NavigableString() 和 .new_tag()
     tag.contents
     # [u'Hello', u' there', u'Nice to see you.']
 
-# 这是Beautiful Soup 4.2.1 中新增的方法
+# 這是Beautiful Soup 4.2.1 中新增的方法
 
-创建一个tag最好的方法是调用工厂方法 ``BeautifulSoup.new_tag()`` :
+創建一個tag最好的方法是調用工廠方法 ``BeautifulSoup.new_tag()`` :
 
 ::
 
@@ -1735,12 +1735,12 @@ NavigableString() 和 .new_tag()
     original_tag
     # <b><a href="http://www.example.com">Link text.</a></b>
 
-第一个参数作为tag的name,是必填,其它参数选填
+第一個參數作為tag的name,是必填,其它參數選填
 
 insert()
 --------
 
-``Tag.insert()`` 方法与 ``Tag.append()`` 方法类似,区别是不会把新元素添加到父节点 ``.contents`` 属性的最后,而是把元素插入到指定的位置.与Python列表总的 ``.insert()`` 方法的用法下同:
+``Tag.insert()`` 方法與 ``Tag.append()`` 方法類似,區別是不會把新元素添加到父節點 ``.contents`` 屬性的最後,而是把元素插入到指定的位置.與Python列表總的 ``.insert()`` 方法的用法下同:
 
 ::
 
@@ -1757,7 +1757,7 @@ insert()
 insert_before() 和 insert_after()
 -----------------------------------
 
-``insert_before()`` 方法在当前tag或文本节点前插入内容:
+``insert_before()`` 方法在當前tag或文本節點前插入內容:
 
 ::
 
@@ -1768,7 +1768,7 @@ insert_before() 和 insert_after()
     soup.b
     # <b><i>Don't</i>stop</b>
 
-``insert_after()`` 方法在当前tag或文本节点后插入内容:
+``insert_after()`` 方法在當前tag或文本節點後插入內容:
 
 ::
 
@@ -1781,7 +1781,7 @@ insert_before() 和 insert_after()
 clear()
 --------
 
-``Tag.clear()`` 方法移除当前tag的内容:
+``Tag.clear()`` 方法移除當前tag的內容:
 
 ::
 
@@ -1796,7 +1796,7 @@ clear()
 extract()
 ----------
 
-``PageElement.extract()`` 方法将当前tag移除文档树,并作为方法结果返回:
+``PageElement.extract()`` 方法將當前tag移除文檔樹,並作為方法結果返回:
 
 ::
 
@@ -1815,7 +1815,7 @@ extract()
     print(i_tag.parent)
     None
 
-这个方法实际上产生了2个文档树: 一个是用来解析原始文档的 ``BeautifulSoup`` 对象,另一个是被移除并且返回的tag.被移除并返回的tag可以继续调用 ``extract`` 方法:
+這個方法實際上產生了2個文檔樹: 一個是用來解析原始文檔的 ``BeautifulSoup`` 物件,另一個是被移除並且返回的tag.被移除並返回的tag可以繼續調用 ``extract`` 方法:
 
 ::
 
@@ -1831,7 +1831,7 @@ extract()
 decompose()
 ------------
 
-``Tag.decompose()`` 方法将当前节点移除文档树并完全销毁:
+``Tag.decompose()`` 方法將當前節點移除文檔樹並完全銷毀:
 
 ::
 
@@ -1847,7 +1847,7 @@ decompose()
 replace_with()
 ---------------
 
-``PageElement.replace_with()`` 方法移除文档树中的某段内容,并用新tag或文本节点替代它:
+``PageElement.replace_with()`` 方法移除文檔樹中的某段內容,並用新tag或文本節點替代它:
 
 ::
 
@@ -1862,12 +1862,12 @@ replace_with()
     a_tag
     # <a href="http://example.com/">I linked to <b>example.net</b></a>
 
-``replace_with()`` 方法返回被替代的tag或文本节点,可以用来浏览或添加到文档树其它地方
+``replace_with()`` 方法返回被替代的tag或文本節點,可以用來流覽或添加到文檔樹其它地方
 
 wrap()
 ------
 
-``PageElement.wrap()`` 方法可以对指定的tag元素进行包装 [8]_ ,并返回包装后的结果:
+``PageElement.wrap()`` 方法可以對指定的tag元素進行包裝 [8]_ ,並返回包裝後的結果:
 
 ::
 
@@ -1878,12 +1878,12 @@ wrap()
     soup.p.wrap(soup.new_tag("div"))
     # <div><p><b>I wish I was bold.</b></p></div>
 
-该方法在 Beautiful Soup 4.0.5 中添加
+該方法在 Beautiful Soup 4.0.5 中添加
 
 unwrap()
 ---------
 
-``Tag.unwrap()`` 方法与 ``wrap()`` 方法相反.将移除tag内的所有tag标签,该方法常被用来进行标记的解包:
+``Tag.unwrap()`` 方法與 ``wrap()`` 方法相反.將移除tag內的所有tag標籤,該方法常被用來進行標記的解包:
 
 ::
 
@@ -1895,15 +1895,15 @@ unwrap()
     a_tag
     # <a href="http://example.com/">I linked to example.com</a>
 
-与 ``replace_with()`` 方法相同, ``unwrap()`` 方法返回被移除的tag
+與 ``replace_with()`` 方法相同, ``unwrap()`` 方法返回被移除的tag
 
-输出
+輸出
 ====
 
-格式化输出
+格式化輸出
 -----------
 
-``prettify()`` 方法将Beautiful Soup的文档树格式化后以Unicode编码输出,每个XML/HTML标签都独占一行
+``prettify()`` 方法將Beautiful Soup的文檔樹格式化後以Unicode編碼輸出,每個XML/HTML標籤都獨佔一行
 
 ::
 
@@ -1926,7 +1926,7 @@ unwrap()
     #  </body>
     # </html>
 
-``BeautifulSoup`` 对象和它的tag节点都可以调用 ``prettify()`` 方法:
+``BeautifulSoup`` 物件和它的tag節點都可以調用 ``prettify()`` 方法:
 
 ::
 
@@ -1938,10 +1938,10 @@ unwrap()
     #  </i>
     # </a>
 
-压缩输出
+壓縮輸出
 ----------
 
-如果只想得到结果字符串,不重视格式,那么可以对一个 ``BeautifulSoup`` 对象或 ``Tag`` 对象使用Python的 ``unicode()`` 或 ``str()`` 方法:
+如果只想得到結果字串,不重視格式,那麼可以對一個 ``BeautifulSoup`` 物件或 ``Tag`` 物件使用Python的 ``unicode()`` 或 ``str()`` 方法:
 
 ::
 
@@ -1951,14 +1951,14 @@ unwrap()
     unicode(soup.a)
     # u'<a href="http://example.com/">I linked to <i>example.com</i></a>'
 
-``str()`` 方法返回UTF-8编码的字符串,可以指定 `编码`_ 的设置.
+``str()`` 方法返回UTF-8編碼的字串,可以指定 `編碼`_ 的設置.
 
-还可以调用 ``encode()`` 方法获得字节码或调用 ``decode()`` 方法获得Unicode.
+還可以調用 ``encode()`` 方法獲得位元組碼或調用 ``decode()`` 方法獲得Unicode.
 
-输出格式
+輸出格式
 ---------
 
-Beautiful Soup输出是会将HTML中的特殊字符转换成Unicode,比如“&lquot;”:
+Beautiful Soup輸出是會將HTML中的特殊字元轉換成Unicode,比如“&lquot;”:
 
 ::
 
@@ -1966,7 +1966,7 @@ Beautiful Soup输出是会将HTML中的特殊字符转换成Unicode,比如“&lq
     unicode(soup)
     # u'<html><head></head><body>\u201cDammit!\u201d he said.</body></html>'
 
-如果将文档转换成字符串,Unicode编码会被编码成UTF-8.这样就无法正确显示HTML特殊字符了:
+如果將文檔轉換成字串,Unicode編碼會被編碼成UTF-8.這樣就無法正確顯示HTML特殊字元了:
 
 ::
 
@@ -1976,7 +1976,7 @@ Beautiful Soup输出是会将HTML中的特殊字符转换成Unicode,比如“&lq
 get_text()
 ----------
 
-如果只想得到tag中包含的文本内容,那么可以调用 ``get_text()`` 方法,这个方法获取到tag中包含的所有文版内容包括子孙tag中的内容,并将结果作为Unicode字符串返回:
+如果只想得到tag中包含的文本內容,那麼可以調用 ``get_text()`` 方法,這個方法獲取到tag中包含的所有文版內容包括子孫tag中的內容,並將結果作為Unicode字串返回:
 
 ::
 
@@ -1988,54 +1988,54 @@ get_text()
     soup.i.get_text()
     u'example.com'
 
-可以通过参数指定tag的文本内容的分隔符:
+可以通過參數指定tag的文本內容的分隔符號:
 
 ::
 
     # soup.get_text("|")
     u'\nI linked to |example.com|\n'
 
-还可以去除获得文本内容的前后空白:
+還可以去除獲得文本內容的前後空白:
 
 ::
 
     # soup.get_text("|", strip=True)
     u'I linked to|example.com'
 
-或者使用 `.stripped_strings`_ 生成器,获得文本列表后手动处理列表:
+或者使用 `.stripped_strings`_ 生成器,獲得文本清單後手動處理清單:
 
 ::
 
     [text for text in soup.stripped_strings]
     # [u'I linked to', u'example.com']
 
-指定文档解析器
+指定文檔解析器
 ==============
 
-如果仅是想要解析HTML文档,只要用文档创建 ``BeautifulSoup`` 对象就可以了.Beautiful Soup会自动选择一个解析器来解析文档.但是还可以通过参数指定使用那种解析器来解析当前文档.
+如果僅是想要解析HTML文檔,只要用文檔創建 ``BeautifulSoup`` 物件就可以了.Beautiful Soup會自動選擇一個解析器來解析文檔.但是還可以通過參數指定使用那種解析器來解析當前文檔.
 
-``BeautifulSoup`` 第一个参数应该是要被解析的文档字符串或是文件句柄,第二个参数用来标识怎样解析文档.如果第二个参数为空,那么Beautiful Soup根据当前系统安装的库自动选择解析器,解析器的优先数序: lxml, html5lib, Python标准库.在下面两种条件下解析器优先顺序会变化:
+``BeautifulSoup`` 第一個參數應該是要被解析的文檔字串或是檔案控制代碼,第二個參數用來標識怎樣解析文檔.如果第二個參數為空,那麼Beautiful Soup根據當前系統安裝的庫自動選擇解析器,解析器的優先數序: lxml, html5lib, Python標準庫.在下面兩種條件下解析器優先順序會變化:
 
-    * 要解析的文档是什么类型: 目前支持,  “html”, “xml”, 和 “html5”
-    * 指定使用哪种解析器: 目前支持, “lxml”, “html5lib”, 和 “html.parser”
+    * 要解析的文檔是什麼類型: 目前支持,  “html”, “xml”, 和 “html5”
+    * 指定使用哪種解析器: 目前支持, “lxml”, “html5lib”, 和 “html.parser”
 
-`安装解析器`_ 章节介绍了可以使用哪种解析器,以及如何安装.
+`安裝解析器`_ 章節介紹了可以使用哪種解析器,以及如何安裝.
 
-如果指定的解析器没有安装,Beautiful Soup会自动选择其它方案.目前只有 lxml 解析器支持XML文档的解析,在没有安装lxml库的情况下,创建 ``beautifulsoup`` 对象时无论是否指定使用lxml,都无法得到解析后的对象
+如果指定的解析器沒有安裝,Beautiful Soup會自動選擇其它方案.目前只有 lxml 解析器支持XML文檔的解析,在沒有安裝lxml庫的情況下,創建 ``beautifulsoup`` 物件時無論是否指定使用lxml,都無法得到解析後的物件
 
-解析器之间的区别
+解析器之間的區別
 -----------------
 
-Beautiful Soup为不同的解析器提供了相同的接口,但解析器本身时有区别的.同一篇文档被不同的解析器解析后可能会生成不同结构的树型文档.区别最大的是HTML解析器和XML解析器,看下面片段被解析成HTML结构:
+Beautiful Soup為不同的解析器提供了相同的介面,但解析器本身時有區別的.同一篇文檔被不同的解析器解析後可能會生成不同結構的樹型文檔.區別最大的是HTML解析器和XML解析器,看下面片段被解析成HTML結構:
 
 ::
 
     BeautifulSoup("<a><b /></a>")
     # <html><head></head><body><a><b></b></a></body></html>
 
-因为空标签<b />不符合HTML标准,所以解析器把它解析成<b></b>
+因為空標籤<b />不符合HTML標準,所以解析器把它解析成<b></b>
 
-同样的文档使用XML解析如下(解析XML需要安装lxml库).注意,空标签<b />依然被保留,并且文档前添加了XML头,而不是被包含在<html>标签内:
+同樣的文檔使用XML解析如下(解析XML需要安裝lxml庫).注意,空標籤<b />依然被保留,並且文檔前添加了XML頭,而不是被包含在<html>標籤內:
 
 ::
 
@@ -2043,41 +2043,41 @@ Beautiful Soup为不同的解析器提供了相同的接口,但解析器本身�
     # <?xml version="1.0" encoding="utf-8"?>
     # <a><b/></a>
 
-HTML解析器之间也有区别,如果被解析的HTML文档是标准格式,那么解析器之间没有任何差别,只是解析速度不同,结果都会返回正确的文档树.
+HTML解析器之間也有區別,如果被解析的HTML文檔是標準格式,那麼解析器之間沒有任何差別,只是解析速度不同,結果都會返回正確的文檔樹.
 
-但是如果被解析文档不是标准格式,那么不同的解析器返回结果可能不同.下面例子中,使用lxml解析错误格式的文档,结果</p>标签被直接忽略掉了:
+但是如果被解析文檔不是標準格式,那麼不同的解析器返回結果可能不同.下面例子中,使用lxml解析錯誤格式的文檔,結果</p>標籤被直接忽略掉了:
 
 ::
 
     BeautifulSoup("<a></p>", "lxml")
     # <html><body><a></a></body></html>
 
-使用html5lib库解析相同文档会得到不同的结果:
+使用html5lib庫解析相同文檔會得到不同的結果:
 
 ::
 
     BeautifulSoup("<a></p>", "html5lib")
     # <html><head></head><body><a><p></p></a></body></html>
 
-html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树添加了<head>标签.
+html5lib庫沒有忽略掉</p>標籤,而是自動補全了標籤,還給文檔樹添加了<head>標籤.
 
-使用pyhton内置库解析结果如下:
+使用pyhton內置庫解析結果如下:
 
 ::
 
     BeautifulSoup("<a></p>", "html.parser")
     # <a></a>
 
-与lxml [7]_ 库类似的,Python内置库忽略掉了</p>标签,与html5lib库不同的是标准库没有尝试创建符合标准的文档格式或将文档片段包含在<body>标签内,与lxml不同的是标准库甚至连<html>标签都没有尝试去添加.
+與lxml [7]_ 庫類似的,Python內置庫忽略掉了</p>標籤,與html5lib庫不同的是標準庫沒有嘗試創建符合標準的文檔格式或將文檔片段包含在<body>標籤內,與lxml不同的是標準庫甚至連<html>標籤都沒有嘗試去添加.
 
-因为文档片段“<a></p>”是错误格式,所以以上解析方式都能算作"正确",html5lib库使用的是HTML5的部分标准,所以最接近"正确".不过所有解析器的结构都能够被认为是"正常"的.
+因為文檔片段“<a></p>”是錯誤格式,所以以上解析方式都能算作"正確",html5lib庫使用的是HTML5的部分標準,所以最接近"正確".不過所有解析器的結構都能夠被認為是"正常"的.
 
-不同的解析器可能影响代码执行结果,如果在分发给别人的代码中使用了 ``BeautifulSoup`` ,那么最好注明使用了哪种解析器,以减少不必要的麻烦.
+不同的解析器可能影響代碼執行結果,如果在分發給別人的代碼中使用了 ``BeautifulSoup`` ,那麼最好注明使用了哪種解析器,以減少不必要的麻煩.
 
-编码
+編碼
 ====
 
-任何HTML或XML文档都有自己的编码方式,比如ASCII 或 UTF-8,但是使用Beautiful Soup解析后,文档都被转换成了Unicode:
+任何HTML或XML文檔都有自己的編碼方式,比如ASCII 或 UTF-8,但是使用Beautiful Soup解析後,文檔都被轉換成了Unicode:
 
 ::
 
@@ -2088,16 +2088,16 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
     soup.h1.string
     # u'Sacr\xe9 bleu!'
 
-这不是魔术(但很神奇),Beautiful Soup用了 `编码自动检测`_ 子库来识别当前文档编码并转换成Unicode编码. ``BeautifulSoup`` 对象的 ``.original_encoding`` 属性记录了自动识别编码的结果:
+這不是魔術(但很神奇),Beautiful Soup用了 `編碼自動檢測`_ 子庫來識別當前文檔編碼並轉換成Unicode編碼. ``BeautifulSoup`` 對象的 ``.original_encoding`` 屬性記錄了自動識別編碼的結果:
 
 ::
 
     soup.original_encoding
     'utf-8'
 
-`编码自动检测`_ 功能大部分时候都能猜对编码格式,但有时候也会出错.有时候即使猜测正确,也是在逐个字节的遍历整个文档后才猜对的,这样很慢.如果预先知道文档编码,可以设置编码参数来减少自动检查编码出错的概率并且提高文档解析速度.在创建 ``BeautifulSoup`` 对象的时候设置 ``from_encoding`` 参数.
+`編碼自動檢測`_ 功能大部分時候都能猜對編碼格式,但有時候也會出錯.有時候即使猜測正確,也是在逐個位元組的遍歷整個文檔後才猜對的,這樣很慢.如果預先知道文檔編碼,可以設置編碼參數來減少自動檢查編碼出錯的概率並且提高文檔解析速度.在創建 ``BeautifulSoup`` 物件的時候設置 ``from_encoding`` 參數.
 
-下面一段文档用了ISO-8859-8编码方式,这段文档太短,结果Beautiful Soup以为文档是用ISO-8859-7编码:
+下面一段文檔用了ISO-8859-8編碼方式,這段文檔太短,結果Beautiful Soup以為文檔是用ISO-8859-7編碼:
 
 ::
 
@@ -2108,7 +2108,7 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
     soup.original_encoding
     'ISO-8859-7'
 
-通过传入 ``from_encoding`` 参数来指定编码方式:
+通過傳入 ``from_encoding`` 參數來指定編碼方式:
 
 ::
 
@@ -2118,9 +2118,9 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
     soup.original_encoding
     'iso8859-8'
 
-如果仅知道文档采用了Unicode编码, 但不知道具体编码. 可以先自己猜测, 猜测错误(依旧是乱码)时,
-可以把错误编码作为 ``exclude_encodings`` 参数, 这样文档就不会尝试使用这种编码了解码了.
-译者备注: 在没有指定编码的情况下, BS会自己猜测编码, 把不正确的编码排除掉, BS就更容易猜到正确编码.
+如果僅知道文檔採用了Unicode編碼, 但不知道具體編碼. 可以先自己猜測, 猜測錯誤(依舊是亂碼)時,
+可以把錯誤編碼作為 ``exclude_encodings`` 參數, 這樣文檔就不會嘗試使用這種編碼了解碼了.
+譯者備註: 在沒有指定編碼的情況下, BS會自己猜測編碼, 把不正確的編碼排除掉, BS就更容易猜到正確編碼.
 
 ::
 
@@ -2130,15 +2130,15 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
 	soup.original_encoding
 	'WINDOWS-1255'
 
-猜测结果是 Windows-1255 编码, 猜测结果可能不够准确, 但是 Windows-1255 编码是 ISO-8859-8 的扩展集,
-所以猜测结果已经十分接近了, 并且不影响使用. (``exclude_encodings`` 参数是 4.4.0版本的新功能)
+猜測結果是 Windows-1255 編碼, 猜測結果可能不夠準確, 但是 Windows-1255 編碼是 ISO-8859-8 的擴展集,
+所以猜測結果已經十分接近了, 並且不影響使用. (``exclude_encodings`` 參數是 4.4.0版本的新功能)
 
-少数情况下(通常是UTF-8编码的文档中包含了其它编码格式的文件),想获得正确的Unicode编码就不得不将文档中少数特殊编码字符替换成特殊Unicode编码,“REPLACEMENT CHARACTER” (U+FFFD, �) [9]_ . 如果Beautifu Soup猜测文档编码时作了特殊字符的替换,那么Beautiful Soup会把 ``UnicodeDammit`` 或 ``BeautifulSoup`` 对象的 ``.contains_replacement_characters`` 属性标记为 ``True`` .这样就可以知道当前文档进行Unicode编码后丢失了一部分特殊内容字符.如果文档中包含�而 ``.contains_replacement_characters`` 属性是 ``False`` ,则表示�就是文档中原来的字符,不是转码失败.
+少數情況下(通常是UTF-8編碼的文檔中包含了其它編碼格式的檔),想獲得正確的Unicode編碼就不得不將文檔中少數特殊編碼字元替換成特殊Unicode編碼,“REPLACEMENT CHARACTER” (U+FFFD, �) [9]_ . 如果Beautifu Soup猜測文檔編碼時作了特殊字元的替換,那麼Beautiful Soup會把 ``UnicodeDammit`` 或 ``BeautifulSoup`` 物件的 ``.contains_replacement_characters`` 屬性標記為 ``True`` .這樣就可以知道當前文檔進行Unicode編碼後丟失了一部分特殊內容字元.如果文檔中包含�而 ``.contains_replacement_characters`` 屬性是 ``False`` ,則表示�就是文檔中原來的字元,不是轉碼失敗.
 
-输出编码
+輸出編碼
 --------
 
-通过Beautiful Soup输出文档时,不管输入文档是什么编码方式,输出编码均为UTF-8编码,下面例子输入文档是Latin-1编码:
+通過Beautiful Soup輸出文檔時,不管輸入文檔是什麼編碼方式,輸出編碼均為UTF-8編碼,下面例子輸入文檔是Latin-1編碼:
 
 ::
 
@@ -2166,9 +2166,9 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
     #  </body>
     # </html>
 
-注意,输出文档中的<meta>标签的编码设置已经修改成了与输出编码一致的UTF-8.
+注意,輸出文檔中的<meta>標籤的編碼設置已經修改成了與輸出編碼一致的UTF-8.
 
-如果不想用UTF-8编码输出,可以将编码方式传入 ``prettify()`` 方法:
+如果不想用UTF-8編碼輸出,可以將編碼方式傳入 ``prettify()`` 方法:
 
 ::
 
@@ -2178,7 +2178,7 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
     #   <meta content="text/html; charset=latin-1" http-equiv="Content-type" />
     # ...
 
-还可以调用 ``BeautifulSoup`` 对象或任意节点的 ``encode()`` 方法,就像Python的字符串调用 ``encode()`` 方法一样:
+還可以調用 ``BeautifulSoup`` 物件或任意節點的 ``encode()`` 方法,就像Python的字串調用 ``encode()`` 方法一樣:
 
 ::
 
@@ -2188,7 +2188,7 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
     soup.p.encode("utf-8")
     # '<p>Sacr\xc3\xa9 bleu!</p>'
 
-如果文档中包含当前编码不支持的字符,那么这些字符将被转换成一系列XML特殊字符引用,下面例子中包含了Unicode编码字符SNOWMAN:
+如果文檔中包含當前編碼不支援的字元,那麼這些字元將被轉換成一系列XML特殊字元引用,下面例子中包含了Unicode編碼字元SNOWMAN:
 
 ::
 
@@ -2196,7 +2196,7 @@ html5lib库没有忽略掉</p>标签,而是自动补全了标签,还给文档树
     snowman_soup = BeautifulSoup(markup)
     tag = snowman_soup.b
 
-SNOWMAN字符在UTF-8编码中可以正常显示(看上去像是☃),但有些编码不支持SNOWMAN字符,比如ISO-Latin-1或ASCII,那么在这些编码中SNOWMAN字符会被转换成“&#9731”:
+SNOWMAN字元在UTF-8編碼中可以正常顯示(看上去像是☃),但有些編碼不支援SNOWMAN字元,比如ISO-Latin-1或ASCII,那麼在這些編碼中SNOWMAN字元會被轉換成“&#9731”:
 
 ::
 
@@ -2209,12 +2209,12 @@ SNOWMAN字符在UTF-8编码中可以正常显示(看上去像是☃),但有些�
     print tag.encode("ascii")
     # <b>&#9731;</b>
 
-Unicode, Dammit! (乱码, 靠!)
+Unicode, Dammit! (亂碼, 靠!)
 -----------------------------
 
-译者备注: UnicodeDammit 是BS内置库, 主要用来猜测文档编码.
+譯者備註: UnicodeDammit 是BS內置庫, 主要用來猜測文檔編碼.
 
-`编码自动检测`_ 功能可以在Beautiful Soup以外使用,检测某段未知编码时,可以使用这个方法:
+`編碼自動檢測`_ 功能可以在Beautiful Soup以外使用,檢測某段未知編碼時,可以使用這個方法:
 
 ::
 
@@ -2225,9 +2225,9 @@ Unicode, Dammit! (乱码, 靠!)
     dammit.original_encoding
     # 'utf-8'
 
-如果Python中安装了 ``chardet`` 或 ``cchardet`` 那么编码检测功能的准确率将大大提高.
-输入的字符越多,检测结果越精确,如果事先猜测到一些可能编码,
-那么可以将猜测的编码作为参数,这样将优先检测这些编码:
+如果Python中安裝了 ``chardet`` 或 ``cchardet`` 那麼編碼檢測功能的準確率將大大提高.
+輸入的字元越多,檢測結果越精確,如果事先猜測到一些可能編碼,
+那麼可以將猜測的編碼作為參數,這樣將優先檢測這些編碼:
 
 ::
 
@@ -2238,12 +2238,12 @@ Unicode, Dammit! (乱码, 靠!)
     dammit.original_encoding
     # 'latin-1'
 
-`编码自动检测`_ 功能中有2项功能是Beautiful Soup库中用不到的
+`編碼自動檢測`_ 功能中有2項功能是Beautiful Soup庫中用不到的
 
-智能引号
+智能引號
 ...........
 
-使用Unicode时,Beautiful Soup还会智能的把引号 [10]_ 转换成HTML或XML中的特殊字符:
+使用Unicode時,Beautiful Soup還會智慧的把引號 [10]_ 轉換成HTML或XML中的特殊字元:
 
 ::
 
@@ -2255,26 +2255,26 @@ Unicode, Dammit! (乱码, 靠!)
     UnicodeDammit(markup, ["windows-1252"], smart_quotes_to="xml").unicode_markup
     # u'<p>I just &#x201C;love&#x201D; Microsoft Word&#x2019;s smart quotes</p>'
 
-也可以把引号转换为ASCII码:
+也可以把引號轉換為ASCII碼:
 
 ::
 
     UnicodeDammit(markup, ["windows-1252"], smart_quotes_to="ascii").unicode_markup
     # u'<p>I just "love" Microsoft Word\'s smart quotes</p>'
 
-很有用的功能,但是Beautiful Soup没有使用这种方式.默认情况下,Beautiful Soup把引号转换成Unicode:
+很有用的功能,但是Beautiful Soup沒有使用這種方式.預設情況下,Beautiful Soup把引號轉換成Unicode:
 
 ::
 
     UnicodeDammit(markup, ["windows-1252"]).unicode_markup
     # u'<p>I just \u201clove\u201d Microsoft Word\u2019s smart quotes</p>'
 
-矛盾的编码
+矛盾的編碼
 ...........
 
-有时文档的大部分都是用UTF-8,但同时还包含了Windows-1252编码的字符,就像微软的智能引号 [10]_ 一样.
-一些包含多个信息的来源网站容易出现这种情况. ``UnicodeDammit.detwingle()``
-方法可以把这类文档转换成纯UTF-8编码格式,看个简单的例子:
+有時文檔的大部分都是用UTF-8,但同時還包含了Windows-1252編碼的字元,就像微軟的智慧引號 [10]_ 一樣.
+一些包含多個資訊的來源網站容易出現這種情況. ``UnicodeDammit.detwingle()``
+方法可以把這類文檔轉換成純UTF-8編碼格式,看個簡單的例子:
 
 ::
 
@@ -2282,7 +2282,7 @@ Unicode, Dammit! (乱码, 靠!)
     quote = (u"\N{LEFT DOUBLE QUOTATION MARK}I like snowmen!\N{RIGHT DOUBLE QUOTATION MARK}")
     doc = snowmen.encode("utf8") + quote.encode("windows_1252")
 
-这段文档很杂乱,snowmen是UTF-8编码,引号是Windows-1252编码,直接输出时不能同时显示snowmen和引号,因为它们编码不同:
+這段文檔很雜亂,snowmen是UTF-8編碼,引號是Windows-1252編碼,直接輸出時不能同時顯示snowmen和引號,因為它們編碼不同:
 
 ::
 
@@ -2292,8 +2292,8 @@ Unicode, Dammit! (乱码, 靠!)
     print(doc.decode("windows-1252"))
     # â˜ƒâ˜ƒâ˜ƒ“I like snowmen!”
 
-如果对这段文档用UTF-8解码就会得到 ``UnicodeDecodeError`` 异常,如果用Windows-1252解码就回得到一堆乱码.
-幸好, ``UnicodeDammit.detwingle()`` 方法会把这段字符串转换成UTF-8编码,允许我们同时显示出文档中的snowmen和引号:
+如果對這段文檔用UTF-8解碼就會得到 ``UnicodeDecodeError`` 異常,如果用Windows-1252解碼就回得到一堆亂碼.
+幸好, ``UnicodeDammit.detwingle()`` 方法會把這段字串轉換成UTF-8編碼,允許我們同時顯示出文檔中的snowmen和引號:
 
 ::
 
@@ -2301,18 +2301,18 @@ Unicode, Dammit! (乱码, 靠!)
     print(new_doc.decode("utf8"))
     # ☃☃☃“I like snowmen!”
 
-``UnicodeDammit.detwingle()`` 方法只能解码包含在UTF-8编码中的Windows-1252编码内容,但这解决了最常见的一类问题.
+``UnicodeDammit.detwingle()`` 方法只能解碼包含在UTF-8編碼中的Windows-1252編碼內容,但這解決了最常見的一類問題.
 
-在创建 ``BeautifulSoup`` 或 ``UnicodeDammit`` 对象前一定要先对文档调用 ``UnicodeDammit.detwingle()`` 确保文档的编码方式正确.如果尝试去解析一段包含Windows-1252编码的UTF-8文档,就会得到一堆乱码,比如: â˜ƒâ˜ƒâ˜ƒ“I like snowmen!”.
+在創建 ``BeautifulSoup`` 或 ``UnicodeDammit`` 物件前一定要先對文檔調用 ``UnicodeDammit.detwingle()`` 確保文檔的編碼方式正確.如果嘗試去解析一段包含Windows-1252編碼的UTF-8文檔,就會得到一堆亂碼,比如: â˜ƒâ˜ƒâ˜ƒ“I like snowmen!”.
 
 ``UnicodeDammit.detwingle()`` 方法在Beautiful Soup 4.1.0版本中新增
 
-比较对象是否相同
+比較物件是否相同
 =================
 
-两个 ``NavigableString`` 或 ``Tag`` 对象具有相同的HTML或XML结构时,
-Beautiful Soup就判断这两个对象相同. 这个例子中, 2个 <b> 标签在 BS 中是相同的,
-尽管他们在文档树的不同位置, 但是具有相同的表象: "<b>pizza</b>"
+兩個 ``NavigableString`` 或 ``Tag`` 物件具有相同的HTML或XML結構時,
+Beautiful Soup就判斷這兩個物件相同. 這個例子中, 2個 <b> 標籤在 BS 中是相同的,
+儘管他們在文檔樹的不同位置, 但是具有相同的表像: "<b>pizza</b>"
 
 ::
 
@@ -2325,17 +2325,17 @@ Beautiful Soup就判断这两个对象相同. 这个例子中, 2个 <b> 标签�
 	print first_b.previous_element == second_b.previous_element
 	# False
 
-如果想判断两个对象是否严格的指向同一个对象可以通过 ``is`` 来判断
+如果想判斷兩個物件是否嚴格的指向同一個物件可以通過 ``is`` 來判斷
 
 ::
 
 	print first_b is second_b
 	# False
 
-复制Beautiful Soup对象
+複製Beautiful Soup對象
 ======================
 
-``copy.copy()`` 方法可以复制任意 ``Tag`` 或 ``NavigableString`` 对象
+``copy.copy()`` 方法可以複製任意 ``Tag`` 或 ``NavigableString`` 物件
 
 ::
 
@@ -2344,7 +2344,7 @@ Beautiful Soup就判断这两个对象相同. 这个例子中, 2个 <b> 标签�
 	print p_copy
 	# <p>I want <b>pizza</b> and more <b>pizza</b>!</p>
 
-复制后的对象跟与对象是相等的, 但指向不同的内存地址
+複製後的物件跟與物件是相等的, 但指向不同的記憶體位址
 
 ::
 
@@ -2354,26 +2354,26 @@ Beautiful Soup就判断这两个对象相同. 这个例子中, 2个 <b> 标签�
 	print soup.p is p_copy
 	# False
 
-源对象和复制对象的区别是源对象在文档树中, 而复制后的对象是独立的还没有添加到文档树中.
-复制后对象的效果跟调用了 ``extract()`` 方法相同.
+源物件和複製物件的區別是源物件在文檔樹中, 而複製後的物件是獨立的還沒有添加到文檔樹中.
+複製後物件的效果跟調用了 ``extract()`` 方法相同.
 
 ::
 
 	print p_copy.parent
 	# None
 
-这是因为相等的对象不能同时插入相同的位置
+這是因為相等的物件不能同時插入相同的位置
 
 
-解析部分文档
+解析部分文檔
 ============
 
-如果仅仅因为想要查找文档中的<a>标签而将整片文档进行解析,实在是浪费内存和时间.最快的方法是从一开始就把<a>标签以外的东西都忽略掉. ``SoupStrainer`` 类可以定义文档的某段内容,这样搜索文档时就不必先解析整篇文档,只会解析在 ``SoupStrainer`` 中定义过的文档. 创建一个 ``SoupStrainer`` 对象并作为 ``parse_only`` 参数给 ``BeautifulSoup`` 的构造方法即可.
+如果僅僅因為想要查找文檔中的<a>標籤而將整片文檔進行解析,實在是浪費記憶體和時間.最快的方法是從一開始就把<a>標籤以外的東西都忽略掉. ``SoupStrainer`` 類可以定義文檔的某段內容,這樣搜索文檔時就不必先解析整篇文檔,只會解析在 ``SoupStrainer`` 中定義過的文檔. 創建一個 ``SoupStrainer`` 物件並作為 ``parse_only`` 參數給 ``BeautifulSoup`` 的構造方法即可.
 
 SoupStrainer
 -------------
 
-``SoupStrainer`` 类接受与典型搜索方法相同的参数：`name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ 。下面举例说明三种 ``SoupStrainer`` 对象：
+``SoupStrainer`` 類接受與典型搜索方法相同的參數：`name`_ , `attrs`_ , `recursive`_ , `string`_ , `**kwargs`_ 。下面舉例說明三種 ``SoupStrainer`` 物件：
 
 ::
 
@@ -2388,7 +2388,7 @@ SoupStrainer
 
     only_short_strings = SoupStrainer(string=is_short_string)
 
-再拿“爱丽丝”文档来举例，来看看使用三种 ``SoupStrainer`` 对象做参数会有什么不同:
+再拿“愛麗絲”文檔來舉例，來看看使用三種 ``SoupStrainer`` 物件做參數會有什麼不同:
 
 ::
 
@@ -2431,7 +2431,7 @@ SoupStrainer
     # ...
     #
 
-还可以将 ``SoupStrainer`` 作为参数传入 `搜索文档树`_ 中提到的方法.这可能不是个常用用法,所以还是提一下:
+還可以將 ``SoupStrainer`` 作為參數傳入 `搜索文檔樹`_ 中提到的方法.這可能不是個常用用法,所以還是提一下:
 
 ::
 
@@ -2440,13 +2440,13 @@ SoupStrainer
     # [u'\n\n', u'\n\n', u'Elsie', u',\n', u'Lacie', u' and\n', u'Tillie',
     #  u'\n\n', u'...', u'\n']
 
-常见问题
+常見問題
 ========
 
-代码诊断
+代碼診斷
 ----------
 
-如果想知道Beautiful Soup到底怎样处理一份文档,可以将文档传入 ``diagnose()`` 方法(Beautiful Soup 4.2.0中新增),Beautiful Soup会输出一份报告,说明不同的解析器会怎样处理这段文档,并标出当前的解析过程会使用哪种解析器:
+如果想知道Beautiful Soup到底怎樣處理一份文檔,可以將文檔傳入 ``diagnose()`` 方法(Beautiful Soup 4.2.0中新增),Beautiful Soup會輸出一份報告,說明不同的解析器會怎樣處理這段文檔,並標出當前的解析過程會使用哪種解析器:
 
 ::
 
@@ -2463,120 +2463,120 @@ SoupStrainer
     # Here's what html.parser did with the document:
     # ...
 
-``diagnose()`` 方法的输出结果可能帮助你找到问题的原因,如果不行,还可以把结果复制出来以便寻求他人的帮助
+``diagnose()`` 方法的輸出結果可能幫助你找到問題的原因,如果不行,還可以把結果複製出來以便尋求他人的幫助
 
-文档解析错误
+文檔解析錯誤
 -------------
 
-文档解析错误有两种.一种是崩溃,Beautiful Soup尝试解析一段文档结果却抛除了异常,通常是 ``HTMLParser.HTMLParseError`` .还有一种异常情况,是Beautiful Soup解析后的文档树看起来与原来的内容相差很多.
+文檔解析錯誤有兩種.一種是崩潰,Beautiful Soup嘗試解析一段文檔結果卻拋除了異常,通常是 ``HTMLParser.HTMLParseError`` .還有一種異常情況,是Beautiful Soup解析後的文檔樹看起來與原來的內容相差很多.
 
-这些错误几乎都不是Beautiful Soup的原因,这不会是因为Beautiful Soup的代码写的太优秀,而是因为Beautiful Soup没有包含任何文档解析代码.异常产生自被依赖的解析器,如果解析器不能很好的解析出当前的文档,那么最好的办法是换一个解析器.更多细节查看 `安装解析器`_ 章节.
+這些錯誤幾乎都不是Beautiful Soup的原因,這不會是因為Beautiful Soup的代碼寫的太優秀,而是因為Beautiful Soup沒有包含任何文檔解析代碼.異常產生自被依賴的解析器,如果解析器不能很好的解析出當前的文檔,那麼最好的辦法是換一個解析器.更多細節查看 `安裝解析器`_ 章節.
 
-最常见的解析错误是 ``HTMLParser.HTMLParseError: malformed start tag`` 和 ``HTMLParser.HTMLParseError: bad end tag`` .这都是由Python内置的解析器引起的,解决方法是 `安装lxml或html5lib`_
+最常見的解析錯誤是 ``HTMLParser.HTMLParseError: malformed start tag`` 和 ``HTMLParser.HTMLParseError: bad end tag`` .這都是由Python內置的解析器引起的,解決方法是 `安裝lxml或html5lib`_
 
-最常见的异常现象是当前文档找不到指定的Tag,而这个Tag光是用眼睛就足够发现的了. ``find_all()`` 方法返回 [] ,而 ``find()`` 方法返回 None .这是Python内置解析器的又一个问题: 解析器会跳过那些它不知道的tag.解决方法还是 `安装lxml或html5lib`_
+最常見的異常現象是當前文檔找不到指定的Tag,而這個Tag光是用眼睛就足夠發現的了. ``find_all()`` 方法返回 [] ,而 ``find()`` 方法返回 None .這是Python內置解析器的又一個問題: 解析器會跳過那些它不知道的tag.解決方法還是 `安裝lxml或html5lib`_
 
-版本错误
+版本錯誤
 ----------
 
-* ``SyntaxError: Invalid syntax`` (异常位置在代码行: ``ROOT_TAG_NAME = u'[document]'`` ),因为Python2语法的代码(没有经过迁移)直接在Python3中运行
+* ``SyntaxError: Invalid syntax`` (異常位置在代碼行: ``ROOT_TAG_NAME = u'[document]'`` ),因為Python2語法的代碼(沒有經過遷移)直接在Python3中運行
 
-* ``ImportError: No module named HTMLParser`` 因为在Python3中执行Python2版本的Beautiful Soup
+* ``ImportError: No module named HTMLParser`` 因為在Python3中執行Python2版本的Beautiful Soup
 
-* ``ImportError: No module named html.parser`` 因为在Python2中执行Python3版本的Beautiful Soup
+* ``ImportError: No module named html.parser`` 因為在Python2中執行Python3版本的Beautiful Soup
 
-* ``ImportError: No module named BeautifulSoup`` 因为在没有安装BeautifulSoup3库的Python环境下执行代码,或忘记了BeautifulSoup4的代码需要从 ``bs4`` 包中引入
+* ``ImportError: No module named BeautifulSoup`` 因為在沒有安裝BeautifulSoup3庫的Python環境下執行代碼,或忘記了BeautifulSoup4的代碼需要從 ``bs4`` 包中引入
 
-* ``ImportError: No module named bs4`` 因为当前Python环境下还没有安装BeautifulSoup4
+* ``ImportError: No module named bs4`` 因為當前Python環境下還沒有安裝BeautifulSoup4
 
 解析成XML
 ----------
 
-默认情况下,Beautiful Soup会将当前文档作为HTML格式解析,如果要解析XML文档,要在 ``BeautifulSoup`` 构造方法中加入第二个参数 "xml":
+預設情況下,Beautiful Soup會將當前文檔作為HTML格式解析,如果要解析XML文檔,要在 ``BeautifulSoup`` 構造方法中加入第二個參數 "xml":
 
 ::
 
     soup = BeautifulSoup(markup, "xml")
 
-当然,还需要 `安装lxml`_
+當然,還需要 `安裝lxml`_
 
-解析器的错误
+解析器的錯誤
 ------------
 
-* 如果同样的代码在不同环境下结果不同,可能是因为两个环境下使用不同的解析器造成的.例如这个环境中安装了lxml,而另一个环境中只有html5lib, `解析器之间的区别`_ 中说明了原因.修复方法是在 ``BeautifulSoup`` 的构造方法中中指定解析器
+* 如果同樣的代碼在不同環境下結果不同,可能是因為兩個環境下使用不同的解析器造成的.例如這個環境中安裝了lxml,而另一個環境中只有html5lib, `解析器之間的區別`_ 中說明了原因.修復方法是在 ``BeautifulSoup`` 的構造方法中中指定解析器
 
-* 因为HTML标签是 `大小写敏感 <http://www.w3.org/TR/html5/syntax.html#syntax>`_ 的,所以3种解析器再出来文档时都将tag和属性转换成小写.例如文档中的 <TAG></TAG> 会被转换为 <tag></tag> .如果想要保留tag的大写的话,那么应该将文档 `解析成XML`_ .
+* 因為HTML標籤是 `大小寫敏感 <http://www.w3.org/TR/html5/syntax.html#syntax>`_ 的,所以3種解析器再出來文檔時都將tag和屬性轉換成小寫.例如文檔中的 <TAG></TAG> 會被轉換為 <tag></tag> .如果想要保留tag的大寫的話,那麼應該將文檔 `解析成XML`_ .
 
-杂项错误
+雜項錯誤
 --------
 
-* ``UnicodeEncodeError: 'charmap' codec can't encode character u'\xfoo' in position bar`` (或其它类型的 ``UnicodeEncodeError`` )的错误,主要是两方面的错误(都不是Beautiful Soup的原因),第一种是正在使用的终端(console)无法显示部分Unicode,参考 `Python wiki <http://wiki.Python.org/moin/PrintFails>`_ ,第二种是向文件写入时,被写入文件不支持部分Unicode,这时只要用 ``u.encode("utf8")`` 方法将编码转换为UTF-8.
+* ``UnicodeEncodeError: 'charmap' codec can't encode character u'\xfoo' in position bar`` (或其它類型的 ``UnicodeEncodeError`` )的錯誤,主要是兩方面的錯誤(都不是Beautiful Soup的原因),第一種是正在使用的終端(console)無法顯示部分Unicode,參考 `Python wiki <http://wiki.Python.org/moin/PrintFails>`_ ,第二種是向檔寫入時,被寫入檔不支援部分Unicode,這時只要用 ``u.encode("utf8")`` 方法將編碼轉換為UTF-8.
 
-* ``KeyError: [attr]`` 因为调用 ``tag['attr']`` 方法而引起,因为这个tag没有定义该属性.出错最多的是 ``KeyError: 'href'`` 和 ``KeyError: 'class'`` .如果不确定某个属性是否存在时,用 ``tag.get('attr')`` 方法去获取它,跟获取Python字典的key一样
+* ``KeyError: [attr]`` 因為調用 ``tag['attr']`` 方法而引起,因為這個tag沒有定義該屬性.出錯最多的是 ``KeyError: 'href'`` 和 ``KeyError: 'class'`` .如果不確定某個屬性是否存在時,用 ``tag.get('attr')`` 方法去獲取它,跟獲取Python字典的key一樣
 
-* ``AttributeError: 'ResultSet' object has no attribute 'foo'`` 错误通常是因为把 ``find_all()`` 的返回结果当作一个tag或文本节点使用,实际上返回结果是一个列表或 ``ResultSet`` 对象的字符串,需要对结果进行循环才能得到每个节点的 ``.foo`` 属性.或者使用 ``find()`` 方法仅获取到一个节点
+* ``AttributeError: 'ResultSet' object has no attribute 'foo'`` 錯誤通常是因為把 ``find_all()`` 的返回結果當作一個tag或文本節點使用,實際上返回結果是一個清單或 ``ResultSet`` 物件的字串,需要對結果進行迴圈才能得到每個節點的 ``.foo`` 屬性.或者使用 ``find()`` 方法僅獲取到一個節點
 
-* ``AttributeError: 'NoneType' object has no attribute 'foo'`` 这个错误通常是在调用了 ``find()`` 方法后直节点取某个属性 .foo 但是 ``find()`` 方法并没有找到任何结果,所以它的返回值是 ``None`` .需要找出为什么 ``find()`` 的返回值是 ``None`` .
+* ``AttributeError: 'NoneType' object has no attribute 'foo'`` 這個錯誤通常是在調用了 ``find()`` 方法後直節點取某個屬性 .foo 但是 ``find()`` 方法並沒有找到任何結果,所以它的返回值是 ``None`` .需要找出為什麼 ``find()`` 的返回值是 ``None`` .
 
 如何提高效率
 ------------
 
-Beautiful Soup对文档的解析速度不会比它所依赖的解析器更快,如果对计算时间要求很高或者计算机的时间比程序员的时间更值钱,那么就应该直接使用 `lxml <http://lxml.de/>`_ .
+Beautiful Soup對文檔的解析速度不會比它所依賴的解析器更快,如果對計算時間要求很高或者電腦的時間比程式師的時間更值錢,那麼就應該直接使用 `lxml <http://lxml.de/>`_ .
 
-换句话说,还有提高Beautiful Soup效率的办法,使用lxml作为解析器.Beautiful Soup用lxml做解析器比用html5lib或Python内置解析器速度快很多.
+換句話說,還有提高Beautiful Soup效率的辦法,使用lxml作為解析器.Beautiful Soup用lxml做解析器比用html5lib或Python內置解析器速度快很多.
 
-安装 `cchardet <http://pypi.Python.org/pypi/cchardet/>`_ 后文档的解码的编码检测会速度更快
+安裝 `cchardet <http://pypi.Python.org/pypi/cchardet/>`_ 後文檔的解碼的編碼檢測會速度更快
 
-`解析部分文档`_ 不会节省多少解析时间,但是会节省很多内存,并且搜索时也会变得更快.
+`解析部分文檔`_ 不會節省多少解析時間,但是會節省很多記憶體,並且搜索時也會變得更快.
 
 Beautiful Soup 3
 =================
 
-Beautiful Soup 3是上一个发布版本,目前已经停止维护.Beautiful Soup 3库目前已经被几个主要的linux平台添加到源里:
+Beautiful Soup 3是上一個發佈版本,目前已經停止維護.Beautiful Soup 3庫目前已經被幾個主要的linux平臺添加到源裡:
 
 ``$ apt-get install Python-beautifulsoup``
 
-在PyPi中分发的包名字是 ``BeautifulSoup`` :
+在PyPi中分發的包名字是 ``BeautifulSoup`` :
 
 ``$ easy_install BeautifulSoup``
 
 ``$ pip install BeautifulSoup``
 
-或通过 `Beautiful Soup 3.2.0源码包 <http://www.crummy.com/software/BeautifulSoup/bs3/download/3.x/BeautifulSoup-3.2.0.tar.gz>`_ 安装
+或通過 `Beautiful Soup 3.2.0源碼包 <http://www.crummy.com/software/BeautifulSoup/bs3/download/3.x/BeautifulSoup-3.2.0.tar.gz>`_ 安裝
 
-Beautiful Soup 3的在线文档查看 `这里 <http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html>`_ .
+Beautiful Soup 3的線上文檔查看 `這裡 <http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html>`_ .
 
-迁移到BS4
+遷移到BS4
 ----------
 
-只要一个小变动就能让大部分的Beautiful Soup 3代码使用Beautiful Soup 4的库和方法----修改 ``BeautifulSoup`` 对象的引入方式:
+只要一個小變動就能讓大部分的Beautiful Soup 3代碼使用Beautiful Soup 4的庫和方法----修改 ``BeautifulSoup`` 物件的引入方式:
 
 ::
 
     from BeautifulSoup import BeautifulSoup
 
-修改为:
+修改為:
 
 ::
 
     from bs4 import BeautifulSoup
 
-* 如果代码抛出 ``ImportError`` 异常“No module named BeautifulSoup”,原因可能是尝试执行Beautiful Soup 3,但环境中只安装了Beautiful Soup 4库
+* 如果代碼拋出 ``ImportError`` 異常“No module named BeautifulSoup”,原因可能是嘗試執行Beautiful Soup 3,但環境中只安裝了Beautiful Soup 4庫
 
-* 如果代码跑出 ``ImportError`` 异常“No module named bs4”,原因可能是尝试运行Beautiful Soup 4的代码,但环境中只安装了Beautiful Soup 3.
+* 如果代碼跑出 ``ImportError`` 異常“No module named bs4”,原因可能是嘗試運行Beautiful Soup 4的代碼,但環境中只安裝了Beautiful Soup 3.
 
-虽然BS4兼容绝大部分BS3的功能,但BS3中的大部分方法已经不推荐使用了,就方法按照 `PEP8标准 <http://www.Python.org/dev/peps/pep-0008/>`_ 重新定义了方法名.很多方法都重新定义了方法名,但只有少数几个方法没有向下兼容.
+雖然BS4相容絕大部分BS3的功能,但BS3中的大部分方法已經不推薦使用了,就方法按照 `PEP8標準 <http://www.Python.org/dev/peps/pep-0008/>`_ 重新定義了方法名.很多方法都重新定義了方法名,但只有少數幾個方法沒有向下相容.
 
-上述内容就是BS3迁移到BS4的注意事项
+上述內容就是BS3遷移到BS4的注意事項
 
 需要的解析器
 ............
 
-Beautiful Soup 3曾使用Python的 ``SGMLParser`` 解析器,这个模块在Python3中已经被移除了.Beautiful Soup 4默认使用系统的 ``html.parser`` ,也可以使用lxml或html5lib扩展库代替.查看 `安装解析器`_ 章节
+Beautiful Soup 3曾使用Python的 ``SGMLParser`` 解析器,這個模組在Python3中已經被移除了.Beautiful Soup 4預設使用系統的 ``html.parser`` ,也可以使用lxml或html5lib擴展庫代替.查看 `安裝解析器`_ 章節
 
-因为解析器 ``html.parser`` 与 ``SGMLParser`` 不同. BS4 和 BS3 处理相同的文档会产生不同的对象结构. 使用lxml或html5lib解析文档的时候, 如果添加了 ``html.parser`` 参数, 解析的对象又回发生变化. 如果发生了这种情况, 只能修改对应的处文档结果处理代码了.
+因為解析器 ``html.parser`` 與 ``SGMLParser`` 不同. BS4 和 BS3 處理相同的文檔會產生不同的物件結構. 使用lxml或html5lib解析文檔的時候, 如果添加了 ``html.parser`` 參數, 解析的物件又回發生變化. 如果發生了這種情況, 只能修改對應的處文檔結果處理代碼了.
 
-方法名的变化
+方法名的變化
 ............
 
 * ``renderContents`` -> ``encode_contents``
@@ -2611,21 +2611,21 @@ Beautiful Soup 3曾使用Python的 ``SGMLParser`` 解析器,这个模块在Pytho
 
 * ``previousSibling`` -> ``previous_sibling``
 
-Beautiful Soup构造方法的参数部分也有名字变化:
+Beautiful Soup構造方法的參數部分也有名字變化:
 
 * ``BeautifulSoup(parseOnlyThese=...)`` -> ``BeautifulSoup(parse_only=...)``
 
 * ``BeautifulSoup(fromEncoding=...)`` -> ``BeautifulSoup(from_encoding=...)``
 
-为了适配Python3,修改了一个方法名:
+為了適配Python3,修改了一個方法名:
 
 * ``Tag.has_key()`` -> ``Tag.has_attr()``
 
-修改了一个属性名,让它看起来更专业点:
+修改了一個屬性名,讓它看起來更專業點:
 
 * ``Tag.isSelfClosing`` -> ``Tag.is_empty_element``
 
-修改了下面3个属性的名字,以免雨Python保留字冲突.这些变动不是向下兼容的,如果在BS3中使用了这些属性,那么在BS4中这些代码无法执行.
+修改了下面3個屬性的名字,以免雨Python保留字衝突.這些變動不是向下相容的,如果在BS3中使用了這些屬性,那麼在BS4中這些代碼無法執行.
 
 * UnicodeDammit.Unicode -> UnicodeDammit.Unicode_markup``
 
@@ -2636,7 +2636,7 @@ Beautiful Soup构造方法的参数部分也有名字变化:
 生成器
 .......
 
-将下列生成器按照PEP8标准重新命名,并转换成对象的属性:
+將下列生成器按照PEP8標準重新命名,並轉換成物件的屬性:
 
 * ``childGenerator()`` -> ``children``
 
@@ -2652,88 +2652,88 @@ Beautiful Soup构造方法的参数部分也有名字变化:
 
 * ``parentGenerator()`` -> ``parents``
 
-所以迁移到BS4版本时要替换这些代码:
+所以遷移到BS4版本時要替換這些代碼:
 
 ::
 
     for parent in tag.parentGenerator():
         ...
 
-替换为:
+替換為:
 
 ::
 
     for parent in tag.parents:
         ...
 
-(两种调用方法现在都能使用)
+(兩種調用方法現在都能使用)
 
-BS3中有的生成器循环结束后会返回 ``None`` 然后结束.这是个bug.新版生成器不再返回 ``None`` .
+BS3中有的生成器迴圈結束後會返回 ``None`` 然後結束.這是個bug.新版生成器不再返回 ``None`` .
 
-BS4中增加了2个新的生成器, `.strings 和 stripped_strings`_ . ``.strings`` 生成器返回NavigableString对象, ``.stripped_strings`` 方法返回去除前后空白的Python的string对象.
+BS4中增加了2個新的生成器, `.strings 和 stripped_strings`_ . ``.strings`` 生成器返回NavigableString對象, ``.stripped_strings`` 方法返回去除前後空白的Python的string物件.
 
 XML
 ....
 
-BS4中移除了解析XML的 ``BeautifulStoneSoup`` 类.如果要解析一段XML文档,使用 ``BeautifulSoup`` 构造方法并在第二个参数设置为“xml”.同时 ``BeautifulSoup`` 构造方法也不再识别 ``isHTML`` 参数.
+BS4中移除了解析XML的 ``BeautifulStoneSoup`` 類.如果要解析一段XML文檔,使用 ``BeautifulSoup`` 構造方法並在第二個參數設置為“xml”.同時 ``BeautifulSoup`` 構造方法也不再識別 ``isHTML`` 參數.
 
-Beautiful Soup处理XML空标签的方法升级了.旧版本中解析XML时必须指明哪个标签是空标签. 构造方法的 ``selfClosingTags`` 参数已经不再使用.新版Beautiful Soup将所有空标签解析为空元素,如果向空元素中添加子节点,那么这个元素就不再是空元素了.
+Beautiful Soup處理XML空標籤的方法升級了.舊版本中解析XML時必須指明哪個標籤是空標籤. 構造方法的 ``selfClosingTags`` 參數已經不再使用.新版Beautiful Soup將所有空標籤解析為空元素,如果向空元素中添加子節點,那麼這個元素就不再是空元素了.
 
-实体
+實體
 .....
 
-HTML或XML实体都会被解析成Unicode字符,Beautiful Soup 3版本中有很多处理实体的方法,在新版中都被移除了. ``BeautifulSoup`` 构造方法也不再接受 ``smartQuotesTo`` 或 ``convertEntities`` 参数. `编码自动检测`_ 方法依然有 ``smart_quotes_to`` 参数,但是默认会将引号转换成Unicode.内容配置项 ``HTML_ENTITIES`` , ``XML_ENTITIES`` 和 ``XHTML_ENTITIES`` 在新版中被移除.因为它们代表的特性已经不再被支持.
+HTML或XML實體都會被解析成Unicode字元,Beautiful Soup 3版本中有很多處理實體的方法,在新版中都被移除了. ``BeautifulSoup`` 構造方法也不再接受 ``smartQuotesTo`` 或 ``convertEntities`` 參數. `編碼自動檢測`_ 方法依然有 ``smart_quotes_to`` 參數,但是默認會將引號轉換成Unicode.內容配置項 ``HTML_ENTITIES`` , ``XML_ENTITIES`` 和 ``XHTML_ENTITIES`` 在新版中被移除.因為它們代表的特性已經不再被支持.
 
-如果在输出文档时想把Unicode字符转换成HTML实体,而不是输出成UTF-8编码,那就需要用到 `输出格式`_ 的方法.
+如果在輸出文檔時想把Unicode字元轉換成HTML實體,而不是輸出成UTF-8編碼,那就需要用到 `輸出格式`_ 的方法.
 
-迁移杂项
+遷移雜項
 .........
 
-`Tag.string`_ 属性现在是一个递归操作.如果A标签只包含了一个B标签,那么A标签的.string属性值与B标签的.string属性值相同.
+`Tag.string`_ 屬性現在是一個遞迴操作.如果A標籤只包含了一個B標籤,那麼A標籤的.string屬性值與B標籤的.string屬性值相同.
 
-`多值属性`_ 比如 ``class`` 属性包含一个他们的值的列表,而不是一个字符串.这可能会影响到如何按照CSS类名哦搜索tag.
+`多值屬性`_ 比如 ``class`` 屬性包含一個他們的值的清單,而不是一個字串.這可能會影響到如何按照CSS類名哦搜索tag.
 
-如果使用 ``find*`` 方法时同时传入了 `string 参数`_ 和 `name 参数`_ .Beautiful Soup会搜索指定name的tag,并且这个tag的 `Tag.string`_ 属性包含text参数的内容.结果中不会包含字符串本身.旧版本中Beautiful Soup会忽略掉tag参数,只搜索text参数.
+如果使用 ``find*`` 方法時同時傳入了 `string 參數`_ 和 `name 參數`_ .Beautiful Soup會搜索指定name的tag,並且這個tag的 `Tag.string`_ 屬性包含text參數的內容.結果中不會包含字串本身.舊版本中Beautiful Soup會忽略掉tag參數,只搜索text參數.
 
-``BeautifulSoup`` 构造方法不再支持 markupMassage 参数.现在由解析器负责文档的解析正确性.
+``BeautifulSoup`` 構造方法不再支援 markupMassage 參數.現在由解析器負責文檔的解析正確性.
 
-很少被用到的几个解析器方法在新版中被移除,比如 ``ICantBelieveItsBeautifulSoup`` 和 ``BeautifulSOAP`` .现在由解析器完全负责如何解释模糊不清的文档标记.
+很少被用到的幾個解析器方法在新版中被移除,比如 ``ICantBelieveItsBeautifulSoup`` 和 ``BeautifulSOAP`` .現在由解析器完全負責如何解釋模糊不清的文檔標記.
 
-``prettify()`` 方法在新版中返回Unicode字符串,不再返回字节流.
+``prettify()`` 方法在新版中返回Unicode字串,不再返回位元組流.
 
-附录
+附錄
 =====
 
-.. _`BeautifulSoup3 文档`: http://www.crummy.com/software/BeautifulSoup/bs3/documentation.zh.html
-.. _name: `name 参数`_
+.. _`BeautifulSoup3 文檔`: http://www.crummy.com/software/BeautifulSoup/bs3/documentation.zh.html
+.. _name: `name 參數`_
 .. _attrs: `按CSS搜索`_
-.. _recursive: `recursive 参数`_
-.. _string: `string 参数`_
-.. _**kwargs: `keyword 参数`_
+.. _recursive: `recursive 參數`_
+.. _string: `string 參數`_
+.. _**kwargs: `keyword 參數`_
 .. _.next_siblings: `.next_siblings 和 .previous_siblings`_
 .. _.previous_siblings: `.next_siblings 和 .previous_siblings`_
 .. _.next_elements: `.next_elements 和 .previous_elements`_
 .. _.previous_elements: `.next_elements 和 .previous_elements`_
 .. _.stripped_strings: `.strings 和 stripped_strings`_
-.. _安装lxml: `安装解析器`_
-.. _安装lxml或html5lib: `安装解析器`_
-.. _编码自动检测: `Unicode, Dammit! (乱码, 靠!)`_
+.. _安裝lxml: `安裝解析器`_
+.. _安裝lxml或html5lib: `安裝解析器`_
+.. _編碼自動檢測: `Unicode, Dammit! (亂碼, 靠!)`_
 .. _Tag.string: `.string`_
 
 
-.. [1] BeautifulSoup的google讨论组不是很活跃,可能是因为库已经比较完善了吧,但是作者还是会很热心的尽量帮你解决问题的.
-.. [2] 文档被解析成树形结构,所以下一步解析过程应该是当前节点的子节点
-.. [3] 过滤器只能作为搜索文档的参数,或者说应该叫参数类型更为贴切,原文中用了 ``filter`` 因此翻译为过滤器
-.. [4] 元素参数,HTML文档中的一个tag节点,不能是文本节点
-.. [5] 采用先序遍历方式
-.. [6] CSS选择器是一种单独的文档搜索语法, 参考 http://www.w3school.com.cn/css/css_selector_type.asp
-.. [7] 原文写的是 html5lib, 译者觉得这是原文档的一个笔误
-.. [8] wrap含有包装,打包的意思,但是这里的包装不是在外部包装而是将当前tag的内部内容包装在一个tag里.包装原来内容的新tag依然在执行 `wrap()`_ 方法的tag内
-.. [9] 文档中特殊编码字符被替换成特殊字符(通常是�)的过程是Beautful Soup自动实现的,如果想要多种编码格式的文档被完全转换正确,那么,只好,预先手动处理,统一编码格式
-.. [10] 智能引号,常出现在microsoft的word软件中,即在某一段落中按引号出现的顺序每个引号都被自动转换为左引号,或右引号.
+.. [1] BeautifulSoup的google討論群組不是很活躍,可能是因為庫已經比較完善了吧,但是作者還是會很熱心的儘量幫你解決問題的.
+.. [2] 文檔被解析成樹形結構,所以下一步解析過程應該是當前節點的子節點
+.. [3] 篩檢程式只能作為搜索文檔的參數,或者說應該叫參數類型更為貼切,原文中用了 ``filter`` 因此翻譯為篩檢程式
+.. [4] 元素參數,HTML文檔中的一個tag節點,不能是文本節點
+.. [5] 採用先序遍歷方式
+.. [6] CSS選擇器是一種單獨的文檔搜索語法, 參考 http://www.w3school.com.cn/css/css_selector_type.asp
+.. [7] 原文寫的是 html5lib, 譯者覺得這是原文檔的一個筆誤
+.. [8] wrap含有包裝,打包的意思,但是這裡的包裝不是在外部包裝而是將當前tag的內部內容包裝在一個tag裡.包裝原來內容的新tag依然在執行 `wrap()`_ 方法的tag內
+.. [9] 文檔中特殊編碼字元被替換成特殊字元(通常是�)的過程是Beautful Soup自動實現的,如果想要多種編碼格式的文檔被完全轉換正確,那麼,只好,預先手動處理,統一編碼格式
+.. [10] 智慧引號,常出現在microsoft的word軟體中,即在某一段落中按引號出現的順序每個引號都被自動轉換為左引號,或右引號.
 
 原文: http://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
-翻译: Deron Wang
+翻譯: Deron Wang
 
-查看 `BeautifulSoup3 文档`_
+查看 `BeautifulSoup3 文檔`_
